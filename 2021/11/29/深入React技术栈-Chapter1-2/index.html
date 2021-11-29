@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   
   
-  <title>深入React技术栈-Chapter1-3 | Hexo</title>
+  <title>深入React技术栈-Chapter1-2 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="1.React基础React生命周期 无状态组件 无状态组件挂载时只是函数的调用，没有创建实例。 因此findDOMNode和refs都不能用，同时建议，这两个方法尽量别用，会打破封装性。 在能用无状态组件的情况下，尽量用无状态组件  React之外的DOM操作尽量不用DOM操作为了保证封装性，但有时有一些操作没办法避免  H5的video的play和input的forcus 点击其他区域合上该组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入React技术栈-Chapter1-3">
-<meta property="og:url" content="https://ig505gi.github.io/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-3/index.html">
+<meta property="og:title" content="深入React技术栈-Chapter1-2">
+<meta property="og:url" content="https://ig505gi.github.io/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.React基础React生命周期 无状态组件 无状态组件挂载时只是函数的调用，没有创建实例。 因此findDOMNode和refs都不能用，同时建议，这两个方法尽量别用，会打破封装性。 在能用无状态组件的情况下，尽量用无状态组件  React之外的DOM操作尽量不用DOM操作为了保证封装性，但有时有一些操作没办法避免  H5的video的play和input的forcus 点击其他区域合上该组">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ig505gi.github.io/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-3/react-lifecircle.jpg">
+<meta property="og:image" content="https://ig505gi.github.io/myBlog/.io//react-lifecircle.jpg">
 <meta property="article:published_time" content="2021-11-29T14:36:03.000Z">
-<meta property="article:modified_time" content="2021-11-29T15:05:33.273Z">
+<meta property="article:modified_time" content="2021-11-29T15:40:51.063Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="React">
 <meta property="article:tag" content="Fonted">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ig505gi.github.io/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-3/react-lifecircle.jpg">
+<meta name="twitter:image" content="https://ig505gi.github.io/myBlog/.io//react-lifecircle.jpg">
   
     <link rel="alternate" href="/myBlog/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -78,9 +78,9 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-深入React技术栈-Chapter1-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-深入React技术栈-Chapter1-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-3/" class="article-date">
+    <a href="/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-2/" class="article-date">
   <time class="dt-published" datetime="2021-11-29T14:36:03.000Z" itemprop="datePublished">2021-11-29</time>
 </a>
     
@@ -92,7 +92,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      深入React技术栈-Chapter1-3
+      深入React技术栈-Chapter1-2
     </h1>
   
 
@@ -100,7 +100,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="1-React基础"><a href="#1-React基础" class="headerlink" title="1.React基础"></a>1.React基础</h2><h3 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h3><p><img src="./react-lifecircle.jpg" alt="react-lifecircle.jpg"></p>
+        <h2 id="1-React基础"><a href="#1-React基础" class="headerlink" title="1.React基础"></a>1.React基础</h2><h3 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h3><p><img src="/myBlog/.io//react-lifecircle.jpg" alt="react-lifecircle.jpg"></p>
 <h3 id="无状态组件"><a href="#无状态组件" class="headerlink" title="无状态组件"></a>无状态组件</h3><ol>
 <li>无状态组件挂载时只是函数的调用，没有创建实例。</li>
 <li>因此findDOMNode和refs都不能用，同时建议，这两个方法尽量别用，会打破封装性。</li>
@@ -135,11 +135,30 @@
 <p>(2) 每当表单的值发生变化时，调用 onChange 事件处理器。</p>
 <p>(3) 事件处理器通过合成事件对象 e 拿到改变后的状态，并更新应用的 state。</p>
 <p>(4) setState 触发视图的重新渲染，完成表单组件值的更新。</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="CSS模块化"><a href="#CSS模块化" class="headerlink" title="CSS模块化"></a>CSS模块化</h3><h4 id="CSS模块化的问题"><a href="#CSS模块化的问题" class="headerlink" title="CSS模块化的问题"></a>CSS模块化的问题</h4><ol>
+<li><code>全局污染</code>:CSS 使用全局选择器机制来设置样式，优点是方便重写样式。缺点是所有的 样式都是全局生效，样式可能被错误覆盖，因此产生了非常丑陋的 !important，甚至 inline !important 和复杂的选择器权重计数表1 ，提高犯错概率和使用成本。Web Components 标准中的 Shadow DOM 能彻底解决这个问题，但它把样式彻底局部化，造成 外部无法重写样式，损失了灵活性。</li>
+<li><code>命名混乱</code>:由于全局污染的问题，多人协同开发时为了避免样式冲突，选择器越来越复 杂，容易形成不同的命名风格，很难统一。样式变多后，命名将更加混乱。</li>
+<li><code>依赖管理不彻底</code>:组件应该相互独立，引入一个组件时，应该只引入它所需要的 CSS 样 式。现在的做法是除了要引入 JavaScript，还要再引入它的 CSS，而且 Saas/Less 很难实现 对每个组件都编译出单独的 CSS，引入所有模块的 CSS 又造成浪费。JavaScript 的模块化 已经非常成熟，如果能让 JavaScript 来管理 CSS 依赖是很好的解决办法，而 webpack 的 css-loader 提供了这种能力。</li>
+<li><code>无法共享变量</code>:复杂组件要使用 JavaScript 和 CSS 来共同处理样式，就会造成有些变量 在 JavaScript 和 CSS 中冗余，而预编译语言不能提供跨 JavaScript 和 CSS 共享变量的这种 能力。</li>
+<li><code>代码压缩不彻底</code>:由于移动端网络的不确定性，现代工程项目对 CSS 压缩的要求已经到 了变态的程度。很多压缩工具为了节省一个字节,会把 16px 转成 1pc，但是这对非常长的 类名却无能为力</li>
+</ol>
+<h4 id="CSS与JS变量共享"><a href="#CSS与JS变量共享" class="headerlink" title="CSS与JS变量共享"></a>CSS与JS变量共享</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* config.scss */</span> </span><br><span class="line">$primary-<span class="attribute">color</span>: <span class="number">#f40</span>;</span><br><span class="line">:export &#123;</span><br><span class="line">  primaryColor: $primary-color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* app.js */</span></span><br><span class="line"><span class="keyword">import</span> style <span class="keyword">from</span> <span class="string">&#x27;config.scss&#x27;</span>;</span><br><span class="line"><span class="comment">// 会输出 #F40 </span></span><br><span class="line"><span class="built_in">console</span>.log(style.primaryColor);</span><br></pre></td></tr></table></figure>
+<h4 id="css-Modules使用技巧"><a href="#css-Modules使用技巧" class="headerlink" title="css Modules使用技巧"></a>css Modules使用技巧</h4><ol>
+<li>不适用选择器，只用class名来定义样式</li>
+<li>不层叠多个class，只用一个class把所有样式定义好</li>
+<li>通过composes组合来实现复用</li>
+<li>不嵌套</li>
+</ol>
+<p>如果在style文件中使用id选择器、伪类和标签选择器，不会被转换或者加前缀</p>
+<h4 id="react-css-modules库"><a href="#react-css-modules库" class="headerlink" title="react-css-modules库"></a>react-css-modules库</h4><p>可以避免重复输入styles.**</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> classNames <span class="keyword">from</span> <span class="string">&#x27;classnames&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> CSSModules <span class="keyword">from</span> <span class="string">&#x27;react-css-modules&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> styles <span class="keyword">from</span> <span class="string">&#x27;./dialog.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dialog</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123; </span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> cx = classNames(&#123;</span><br><span class="line">      <span class="attr">confirm</span>: !<span class="built_in">this</span>.state.disabled, </span><br><span class="line">      <span class="attr">disabledConfirm</span>: <span class="built_in">this</span>.state.disabled,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">styleName</span>=<span class="string">&quot;root&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">styleName</span>=<span class="string">&#123;cx&#125;</span>&gt;</span>Confirm<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="xml">        // ... </span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    ); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> CSSModules(Dialog, styles);</span><br></pre></td></tr></table></figure>
+<p>使用 CSS Modules，容易使用 :global 去解决特殊情况，使用 react-css-modules 可写成 <div classname="global-css" stylename="local-module"></div>，这种形式轻松对应全局和局部;</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ig505gi.github.io/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-3/" data-id="ckwktmq4k00011yzt7dkwa1ul" data-title="深入React技术栈-Chapter1-3" class="article-share-link">Share</a>
+      <a data-url="https://ig505gi.github.io/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-2/" data-id="ckwku9ty50001zyztd5ed4scd" data-title="深入React技术栈-Chapter1-2" class="article-share-link">Share</a>
       
       
       
@@ -206,7 +225,7 @@
       <ul>
         
           <li>
-            <a href="/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-3/">深入React技术栈-Chapter1-3</a>
+            <a href="/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-2/">深入React技术栈-Chapter1-2</a>
           </li>
         
           <li>
