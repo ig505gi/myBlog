@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://ig505gi.github.io/myBlog/.io//react-lifecircle.jpg">
 <meta property="og:image" content="https://ig505gi.github.io/myBlog/.io//compose.jpg">
 <meta property="article:published_time" content="2021-11-29T14:36:03.000Z">
-<meta property="article:modified_time" content="2022-02-14T02:27:25.721Z">
+<meta property="article:modified_time" content="2022-02-15T01:23:36.835Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="React">
 <meta property="article:tag" content="Fonted">
@@ -174,7 +174,23 @@
 <h5 id="反向继承"><a href="#反向继承" class="headerlink" title="反向继承"></a>反向继承</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span> </span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">WrappedComponent</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">super</span>.render();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p>特点：渲染劫持，控制state<br>(大部分高阶组件都应该限制读取或增加state，防止混乱)</p>
 <h4 id="组合式组件"><a href="#组合式组件" class="headerlink" title="组合式组件"></a>组合式组件</h4><p><img src="/myBlog/.io//compose.jpg" alt="compose.jpg"><br>组合式的方式意图打破这种关联，寻求单元化，通过颗粒度更细的 基础组件与抽象组件共有交互与业务逻辑的高阶组件，使组件更灵活，更易扩展，也使我们能够 完成对于基础组件的自由支配。</p>
-<h3 id="组件性能优化"><a href="#组件性能优化" class="headerlink" title="组件性能优化"></a>组件性能优化</h3>
+<h3 id="组件性能优化"><a href="#组件性能优化" class="headerlink" title="组件性能优化"></a>组件性能优化</h3><h4 id="纯函数的定义"><a href="#纯函数的定义" class="headerlink" title="纯函数的定义"></a>纯函数的定义</h4><ol>
+<li>给定相同的输入，总返回相同的输出</li>
+<li>过程没有副作用</li>
+<li>没有额外的状态依赖<br>理解：</li>
+<li>好理解。2.入参有个对象，函数内是该对象的引用，对其进行改变，就是所谓的产生了副作用。可以用immutable的概念去解决，用lodash的cloneDeep。3.在方法内不使用共享变量，内部所有变量只在方法的生命周期内存活，拒绝闭包？</li>
+</ol>
+<h4 id="PureRender"><a href="#PureRender" class="headerlink" title="PureRender"></a>PureRender</h4><p>重新实现shouldComponentUpdate方法，对props和state做浅比较，值对比引用(深比较实在太昂贵了)<br>以下类型，无论如何都会触发pureRender的重渲染：</p>
+<ol>
+<li>props直接设置为对象或数组<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Account style=&#123;&#123;<span class="attr">color</span>: <span class="string">&#x27;black&#x27;</span>&#125;&#125; /&gt;</span><br></pre></td></tr></table></figure>
+因为每次都是重新生成了一个新对象，数组同理；解决：先定义一个变量即可。</li>
+<li>设置props方法并通过事件绑定在元素上<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input onChange=&#123;<span class="built_in">this</span>.handleChange.bind(<span class="built_in">this</span>)&#125; /&gt;</span><br></pre></td></tr></table></figure>
+每次会重新生成新函数对象(箭头函数也同理？)。解决：bind放在constructor内</li>
+<li>设置子组件<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Item&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Arcthur<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">Item</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 翻译后 每次都生成了新对象</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">Item</span></span></span></span><br><span class="line"><span class="tag"><span class="xml"><span class="attr">children</span>=<span class="string">&#123;React.createElement(</span>&#x27;<span class="attr">span</span>&#x27;, &#123;&#125;, &#x27;<span class="attr">Arcthur</span>&#x27;)&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">/&gt;</span></span></span><br></pre></td></tr></table></figure>
+解决：使用Item组件的父组件也要pureRender</li>
+</ol>
+<h4 id="Immutable"><a href="#Immutable" class="headerlink" title="Immutable"></a>Immutable</h4><p>// To be continued</p>
+
       
     </div>
     <footer class="article-footer">
