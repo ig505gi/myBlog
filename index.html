@@ -96,6 +96,15 @@
         <h2 id="1-初探React源码"><a href="#1-初探React源码" class="headerlink" title="1. 初探React源码"></a>1. 初探React源码</h2><p>React源码的组织结构<br><img src="/myBlog/.io//react%E7%9B%AE%E5%BD%95.jpg" alt="react目录.jpg"></p>
 <p>而renderers目录结构是这样的<br><img src="/myBlog/.io//react-renderers%E7%9B%AE%E5%BD%95.jpg" alt="react-renderers目录.jpg"></p>
 <p>client是客户端操作dom的一些方法；server是服务端渲染的实现和方法；event包含有一套自定义的事件插件系统；作为React核心的reconciler，称为协调器，管理组件的实现、生命周期、setState、DOM diff算法;管理Virtual DOM</p>
+<h2 id="2-Virtual-DOM-模型"><a href="#2-Virtual-DOM-模型" class="headerlink" title="2. Virtual DOM 模型"></a>2. Virtual DOM 模型</h2><h3 id="ReactNode"><a href="#ReactNode" class="headerlink" title="ReactNode"></a>ReactNode</h3><p>Virtual DOM的节点叫作ReactNode</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type ReactNode = ReactElement | ReactFragment | ReactText;</span><br><span class="line">type ReactElement = ReactComponentElement | ReactDOMElement;</span><br></pre></td></tr></table></figure>
+
+<p>// 差一些</p>
+<h3 id="ReactDOMComponent"><a href="#ReactDOMComponent" class="headerlink" title="ReactDOMComponent"></a>ReactDOMComponent</h3><ol>
+<li>属性的更新，包括更新样式、更新属性、处理事件等;</li>
+<li>子节点的更新，包括更新内容、更新子节点，此部分涉及diff算法。</li>
+</ol>
+<p>// 差很多</p>
 
       
     </div>
