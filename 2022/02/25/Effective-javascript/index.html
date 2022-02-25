@@ -4,15 +4,25 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>Effective javascript | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://ig505gi.github.io/myBlog/index.html">
+  <meta name="description" content="chapter1 让自己习惯JavaScript1.ES版本问题及strict modeES5引入了严格模式，使用字符串字面量作为指令是为了向前兼容，ES3看到&quot;use strict&quot;会直接丢掉。为了解决严格模式和非严格模式的文件打包在一起的问题，可以用IIFE(Immmediately Invoked Function Expression)来解决 2.number是浮点型J">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effective javascript">
+<meta property="og:url" content="https://ig505gi.github.io/myBlog/2022/02/25/Effective-javascript/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="chapter1 让自己习惯JavaScript1.ES版本问题及strict modeES5引入了严格模式，使用字符串字面量作为指令是为了向前兼容，ES3看到&quot;use strict&quot;会直接丢掉。为了解决严格模式和非严格模式的文件打包在一起的问题，可以用IIFE(Immmediately Invoked Function Expression)来解决 2.number是浮点型J">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://ig505gi.github.io/myBlog/.io//%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99.jpg">
+<meta property="og:image" content="https://ig505gi.github.io/myBlog/.io//%E7%A0%81%E5%8D%95%E5%85%83%E5%A4%A7%E4%BA%8E%E7%AD%89%E4%BA%8E2.jpg">
+<meta property="og:image" content="https://ig505gi.github.io/myBlog/.io//%E7%B1%BB%E6%95%B0%E7%BB%84%E5%AE%9A%E4%B9%89.png">
+<meta property="article:published_time" content="2022-02-25T00:44:13.000Z">
+<meta property="article:modified_time" content="2022-02-25T00:52:11.114Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="fronted">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ig505gi.github.io/myBlog/.io//%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99.jpg">
   
     <link rel="alternate" href="/myBlog/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -69,9 +79,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Effective-javascript" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Effective-javascript" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/myBlog/2022/02/25/Effective-javascript/" class="article-date">
   <time class="dt-published" datetime="2022-02-25T00:44:13.000Z" itemprop="datePublished">2022-02-25</time>
@@ -84,8 +92,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/myBlog/2022/02/25/Effective-javascript/">Effective javascript</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Effective javascript
     </h1>
   
 
@@ -269,253 +277,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-深入React技术栈-Chapter3-React源码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/myBlog/2022/02/21/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter3-React%E6%BA%90%E7%A0%81/" class="article-date">
-  <time class="dt-published" datetime="2022-02-21T00:47:40.000Z" itemprop="datePublished">2022-02-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/myBlog/2022/02/21/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter3-React%E6%BA%90%E7%A0%81/">深入React技术栈-Chapter3-React源码</a>
-    </h1>
+    <a href="/myBlog/2022/02/21/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter3-React%E6%BA%90%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">深入React技术栈-Chapter3-React源码</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-初探React源码"><a href="#1-初探React源码" class="headerlink" title="1. 初探React源码"></a>1. 初探React源码</h2><p>React源码的组织结构<br><img src="/myBlog/.io//react%E7%9B%AE%E5%BD%95.jpg" alt="react目录.jpg"></p>
-<p>而renderers目录结构是这样的<br><img src="/myBlog/.io//react-renderers%E7%9B%AE%E5%BD%95.jpg" alt="react-renderers目录.jpg"></p>
-<p>client是客户端操作dom的一些方法；server是服务端渲染的实现和方法；event包含有一套自定义的事件插件系统；作为React核心的reconciler，称为协调器，管理组件的实现、生命周期、setState、DOM diff算法;管理Virtual DOM</p>
-<h2 id="2-Virtual-DOM-模型"><a href="#2-Virtual-DOM-模型" class="headerlink" title="2. Virtual DOM 模型"></a>2. Virtual DOM 模型</h2><h3 id="ReactNode"><a href="#ReactNode" class="headerlink" title="ReactNode"></a>ReactNode</h3><p>Virtual DOM的节点叫作ReactNode</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type ReactNode = ReactElement | ReactFragment | ReactText;</span><br><span class="line">type ReactElement = ReactComponentElement | ReactDOMElement;</span><br></pre></td></tr></table></figure>
-
-<p>// 差一些</p>
-<h3 id="ReactDOMComponent"><a href="#ReactDOMComponent" class="headerlink" title="ReactDOMComponent"></a>ReactDOMComponent</h3><ol>
-<li>属性的更新，包括更新样式、更新属性、处理事件等;</li>
-<li>子节点的更新，包括更新内容、更新子节点，此部分涉及diff算法。</li>
-</ol>
-<p>// 差很多</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ig505gi.github.io/myBlog/2022/02/21/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter3-React%E6%BA%90%E7%A0%81/" data-id="ckzwcckmn0000exzt63qz1873" data-title="深入React技术栈-Chapter3-React源码" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myBlog/tags/Fonted/" rel="tag">Fonted</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myBlog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myBlog/tags/React/" rel="tag">React</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-深入React技术栈-Chapter1-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-2/" class="article-date">
-  <time class="dt-published" datetime="2021-11-29T14:36:03.000Z" itemprop="datePublished">2021-11-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-2/">深入React技术栈-Chapter1-2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-React基础"><a href="#1-React基础" class="headerlink" title="1.React基础"></a>1.React基础</h2><h3 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h3><p><img src="/myBlog/.io//react-lifecircle.jpg" alt="react-lifecircle.jpg"></p>
-<h3 id="无状态组件"><a href="#无状态组件" class="headerlink" title="无状态组件"></a>无状态组件</h3><ol>
-<li>无状态组件挂载时只是函数的调用，没有创建实例。</li>
-<li>因此findDOMNode和refs都不能用，同时建议，这两个方法尽量别用，会打破封装性。</li>
-<li>在能用无状态组件的情况下，尽量用无状态组件</li>
-</ol>
-<h3 id="React之外的DOM操作"><a href="#React之外的DOM操作" class="headerlink" title="React之外的DOM操作"></a>React之外的DOM操作</h3><p>尽量不用DOM操作为了保证封装性，但有时有一些操作没办法避免</p>
-<ol>
-<li>H5的video的play和input的forcus</li>
-<li>点击其他区域合上该组件</li>
-<li>计算DOM的尺寸<br>自己的理解：用hooks解决以上2，3问题，保证了一定的封装性？</li>
-</ol>
-<h2 id="2-事件"><a href="#2-事件" class="headerlink" title="2.事件"></a>2.事件</h2><h3 id="合成事件的实现机制"><a href="#合成事件的实现机制" class="headerlink" title="合成事件的实现机制"></a>合成事件的实现机制</h3><p>事件委派和自动绑定</p>
-<ol>
-<li>事件委派：有一个统一的事件监听层，并不会把事件处理函数直接绑定到真实的节点上。</li>
-<li>自动绑定：React组件中，每个方法的上下文都会指向该组件的实例，即this自动指向当前组件。</li>
-</ol>
-<h3 id="三种手动绑定方法"><a href="#三种手动绑定方法" class="headerlink" title="三种手动绑定方法"></a>三种手动绑定方法</h3><p>如果用ES6 classes或者纯函数，就没自动绑定了，需要手动绑定：</p>
-<p>1.bind方法绑定</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick.bind(this,</span> &#x27;<span class="attr">tes</span>&#x27;)&#125;&gt;</span>Test<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>2.构造器内声明<br>class中的方法不用箭头函数，就必须绑定</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在constructor中：</span></span><br><span class="line"><span class="built_in">this</span>.handleClick = <span class="built_in">this</span>.handleClick.bind(<span class="built_in">this</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 在 class中</span></span><br><span class="line"><span class="function"><span class="title">handleClick</span>(<span class="params">e</span>)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>3.箭头函数<br>如果使用箭头函数，可以直接这样：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> handleClick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(e);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick&#125;</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="React合成事件的限制"><a href="#React合成事件的限制" class="headerlink" title="React合成事件的限制"></a>React合成事件的限制</h3><p>React 的合成事件系统只是原生 DOM 事件系统的一个子集。它仅仅实现了 DOM Level 3 的事件接口，并且统一了浏览器间的兼容问题。有些事件 React 并没有实现，或者受某些 限制没办法去实现，比如 window 的 resize 事件</p>
-<h3 id="React合成事件和JS原生事件的对比"><a href="#React合成事件和JS原生事件的对比" class="headerlink" title="React合成事件和JS原生事件的对比"></a>React合成事件和JS原生事件的对比</h3><h4 id="1-事件传播与阻止事件传播"><a href="#1-事件传播与阻止事件传播" class="headerlink" title="1. 事件传播与阻止事件传播"></a>1. 事件传播与阻止事件传播</h4><p>原生DOM事件三阶段：1.事件捕获 2.事件处理 3.事件冒泡</p>
-<p>而React没有实现事件捕获，因为其在开发中意义不大 (?)</p>
-<h4 id="2-事件类型"><a href="#2-事件类型" class="headerlink" title="2.事件类型"></a>2.事件类型</h4><p>React 合成事件的事件类型是 JavaScript 原生事件类型的一个子集</p>
-<h4 id="3-事件绑定方式"><a href="#3-事件绑定方式" class="headerlink" title="3.事件绑定方式"></a>3.事件绑定方式</h4><p>不多说了</p>
-<h4 id="4-事件对象"><a href="#4-事件对象" class="headerlink" title="4.事件对象"></a>4.事件对象</h4><p>原生 DOM 事件对象在 W3C 标准和 IE 标准下存在着差异。在低版本的 IE 浏览器中，只能使用 window.event 来获取事件对象。而在 React 合成事件系统中，不存在这种兼容性问题，在事件处理函数中可以得到一个合成事件对象。</p>
-<h2 id="3-表单"><a href="#3-表单" class="headerlink" title="3.表单"></a>3.表单</h2><h3 id="受控组件"><a href="#受控组件" class="headerlink" title="受控组件"></a>受控组件</h3><p>React 受控组件更新 state 的流程:</p>
-<p>(1) 可以通过在初始 state 中设置表单的默认值。</p>
-<p>(2) 每当表单的值发生变化时，调用 onChange 事件处理器。</p>
-<p>(3) 事件处理器通过合成事件对象 e 拿到改变后的状态，并更新应用的 state。</p>
-<p>(4) setState 触发视图的重新渲染，完成表单组件值的更新。</p>
-<h2 id="4-CSS"><a href="#4-CSS" class="headerlink" title="4.CSS"></a>4.CSS</h2><h3 id="CSS模块化"><a href="#CSS模块化" class="headerlink" title="CSS模块化"></a>CSS模块化</h3><h4 id="CSS模块化的问题"><a href="#CSS模块化的问题" class="headerlink" title="CSS模块化的问题"></a>CSS模块化的问题</h4><ol>
-<li><code>全局污染</code>:CSS 使用全局选择器机制来设置样式，优点是方便重写样式。缺点是所有的 样式都是全局生效，样式可能被错误覆盖，因此产生了非常丑陋的 !important，甚至 inline !important 和复杂的选择器权重计数表1 ，提高犯错概率和使用成本。Web Components 标准中的 Shadow DOM 能彻底解决这个问题，但它把样式彻底局部化，造成 外部无法重写样式，损失了灵活性。</li>
-<li><code>命名混乱</code>:由于全局污染的问题，多人协同开发时为了避免样式冲突，选择器越来越复 杂，容易形成不同的命名风格，很难统一。样式变多后，命名将更加混乱。</li>
-<li><code>依赖管理不彻底</code>:组件应该相互独立，引入一个组件时，应该只引入它所需要的 CSS 样 式。现在的做法是除了要引入 JavaScript，还要再引入它的 CSS，而且 Saas/Less 很难实现 对每个组件都编译出单独的 CSS，引入所有模块的 CSS 又造成浪费。JavaScript 的模块化 已经非常成熟，如果能让 JavaScript 来管理 CSS 依赖是很好的解决办法，而 webpack 的 css-loader 提供了这种能力。</li>
-<li><code>无法共享变量</code>:复杂组件要使用 JavaScript 和 CSS 来共同处理样式，就会造成有些变量 在 JavaScript 和 CSS 中冗余，而预编译语言不能提供跨 JavaScript 和 CSS 共享变量的这种 能力。</li>
-<li><code>代码压缩不彻底</code>:由于移动端网络的不确定性，现代工程项目对 CSS 压缩的要求已经到 了变态的程度。很多压缩工具为了节省一个字节,会把 16px 转成 1pc，但是这对非常长的 类名却无能为力</li>
-</ol>
-<h4 id="CSS与JS变量共享"><a href="#CSS与JS变量共享" class="headerlink" title="CSS与JS变量共享"></a>CSS与JS变量共享</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* config.scss */</span> </span><br><span class="line">$primary-<span class="attribute">color</span>: <span class="number">#f40</span>;</span><br><span class="line">:export &#123;</span><br><span class="line">  primaryColor: $primary-color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* app.js */</span></span><br><span class="line"><span class="keyword">import</span> style <span class="keyword">from</span> <span class="string">&#x27;config.scss&#x27;</span>;</span><br><span class="line"><span class="comment">// 会输出 #F40 </span></span><br><span class="line"><span class="built_in">console</span>.log(style.primaryColor);</span><br></pre></td></tr></table></figure>
-<h4 id="css-Modules使用技巧"><a href="#css-Modules使用技巧" class="headerlink" title="css Modules使用技巧"></a>css Modules使用技巧</h4><ol>
-<li>不适用选择器，只用class名来定义样式</li>
-<li>不层叠多个class，只用一个class把所有样式定义好</li>
-<li>通过composes组合来实现复用</li>
-<li>不嵌套</li>
-</ol>
-<p>如果在style文件中使用id选择器、伪类和标签选择器，不会被转换或者加前缀</p>
-<h4 id="react-css-modules库"><a href="#react-css-modules库" class="headerlink" title="react-css-modules库"></a>react-css-modules库</h4><p>可以避免重复输入styles.**</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> classNames <span class="keyword">from</span> <span class="string">&#x27;classnames&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> CSSModules <span class="keyword">from</span> <span class="string">&#x27;react-css-modules&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> styles <span class="keyword">from</span> <span class="string">&#x27;./dialog.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dialog</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123; </span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> cx = classNames(&#123;</span><br><span class="line">      <span class="attr">confirm</span>: !<span class="built_in">this</span>.state.disabled, </span><br><span class="line">      <span class="attr">disabledConfirm</span>: <span class="built_in">this</span>.state.disabled,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">styleName</span>=<span class="string">&quot;root&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">styleName</span>=<span class="string">&#123;cx&#125;</span>&gt;</span>Confirm<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="xml">        // ... </span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    ); </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> CSSModules(Dialog, styles);</span><br></pre></td></tr></table></figure>
-<p>使用 CSS Modules，容易使用 :global 去解决特殊情况，使用 react-css-modules 可写成 <div classname="global-css" stylename="local-module"></div>，这种形式轻松对应全局和局部;</p>
-<h2 id="5-React组件"><a href="#5-React组件" class="headerlink" title="5.React组件"></a>5.React组件</h2><h3 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h3><ul>
-<li>父向子通信：属性</li>
-<li>子向父通信：回调</li>
-<li>跨级通信：在父组件中定义ChildContext,子组件可以直接用this.context拿到对应的值；context可以存在很多级</li>
-<li>无嵌套关系通信：使用Events模块的事件订阅和发布来实现</li>
-</ul>
-<h3 id="组件间抽象"><a href="#组件间抽象" class="headerlink" title="组件间抽象"></a>组件间抽象</h3><h4 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h4><h5 id="JS中的mixin"><a href="#JS中的mixin" class="headerlink" title="JS中的mixin"></a>JS中的mixin</h5><p>mixin是为了弥补一些老的OOP语言不能实现多重继承的缺点，而采用的另外一个方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TODO 有空自己实现一下</span></span><br></pre></td></tr></table></figure>
-<h5 id="React中的mixin"><a href="#React中的mixin" class="headerlink" title="React中的mixin"></a>React中的mixin</h5><ol>
-<li>适用于createClass的情况。。比较老了，不再细讲</li>
-<li>使用ES6 Classes和decorator，用法：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;React&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; mixin &#125; <span class="keyword">from</span> <span class="string">&#x27;core-decorators&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> PureRender = &#123; </span><br><span class="line">  <span class="function"><span class="title">shouldComponentUpdate</span>(<span class="params"></span>)</span> &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> Theme = &#123; </span><br><span class="line">  <span class="function"><span class="title">setTheme</span>(<span class="params"></span>)</span> &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line">@mixin(PureRender, Theme)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-但是mixin也有命名冲突、破坏原组件的封装性等问题</li>
-</ol>
-<h4 id="高阶组件"><a href="#高阶组件" class="headerlink" title="高阶组件"></a>高阶组件</h4><p>解释：React组件被包裹，高阶组件会返回一个增强的React组件。<br>实现高阶组件有两种方式：属性代理和反向继承</p>
-<h5 id="属性代理"><a href="#属性代理" class="headerlink" title="属性代理"></a>属性代理</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;React&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span> </span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> &#123;<span class="attr">...this.props</span>&#125; /&gt;</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>当然，也可以使用装饰器语法。<br>调用顺序<br>didmount→HOC didmount→(HOCs didmount)→(HOCs will unmount)→HOC will unmount→unmount</p>
-<h5 id="反向继承"><a href="#反向继承" class="headerlink" title="反向继承"></a>反向继承</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MyContainer = <span class="function">(<span class="params">WrappedComponent</span>) =&gt;</span> </span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">WrappedComponent</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">super</span>.render();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>特点：渲染劫持，控制state<br>(大部分高阶组件都应该限制读取或增加state，防止混乱)</p>
-<h4 id="组合式组件"><a href="#组合式组件" class="headerlink" title="组合式组件"></a>组合式组件</h4><p><img src="/myBlog/.io//compose.jpg" alt="compose.jpg"><br>组合式的方式意图打破这种关联，寻求单元化，通过颗粒度更细的 基础组件与抽象组件共有交互与业务逻辑的高阶组件，使组件更灵活，更易扩展，也使我们能够 完成对于基础组件的自由支配。</p>
-<h3 id="组件性能优化"><a href="#组件性能优化" class="headerlink" title="组件性能优化"></a>组件性能优化</h3><h4 id="纯函数的定义"><a href="#纯函数的定义" class="headerlink" title="纯函数的定义"></a>纯函数的定义</h4><ol>
-<li>给定相同的输入，总返回相同的输出</li>
-<li>过程没有副作用</li>
-<li>没有额外的状态依赖<br>理解：</li>
-<li>好理解。2.入参有个对象，函数内是该对象的引用，对其进行改变，就是所谓的产生了副作用。可以用immutable的概念去解决，用lodash的cloneDeep。3.在方法内不使用共享变量，内部所有变量只在方法的生命周期内存活，拒绝闭包？</li>
-</ol>
-<h4 id="PureRender"><a href="#PureRender" class="headerlink" title="PureRender"></a>PureRender</h4><p>重新实现shouldComponentUpdate方法，对props和state做浅比较，值对比引用(深比较实在太昂贵了)<br>以下类型，无论如何都会触发pureRender的重渲染：</p>
-<ol>
-<li>props直接设置为对象或数组<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Account style=&#123;&#123;<span class="attr">color</span>: <span class="string">&#x27;black&#x27;</span>&#125;&#125; /&gt;</span><br></pre></td></tr></table></figure>
-因为每次都是重新生成了一个新对象，数组同理；解决：先定义一个变量即可。</li>
-<li>设置props方法并通过事件绑定在元素上<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input onChange=&#123;<span class="built_in">this</span>.handleChange.bind(<span class="built_in">this</span>)&#125; /&gt;</span><br></pre></td></tr></table></figure>
-每次会重新生成新函数对象(箭头函数也同理？)。解决：bind放在constructor内</li>
-<li>设置子组件<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Item&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Arcthur<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">Item</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 翻译后 每次都生成了新对象</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">Item</span></span></span></span><br><span class="line"><span class="tag"><span class="xml"><span class="attr">children</span>=<span class="string">&#123;React.createElement(</span>&#x27;<span class="attr">span</span>&#x27;, &#123;&#125;, &#x27;<span class="attr">Arcthur</span>&#x27;)&#125;</span></span></span><br><span class="line"><span class="tag"><span class="xml">/&gt;</span></span></span><br></pre></td></tr></table></figure>
-解决：使用Item组件的父组件也要pureRender</li>
-</ol>
-<h4 id="Immutable"><a href="#Immutable" class="headerlink" title="Immutable"></a>Immutable</h4><p>引用赋值的问题：容易改变，复杂系统有隐患。<br>深拷贝：浪费内存</p>
-<ol>
-<li>Immutable Data<br>Immutable Data被创建后，不能更改。如果对原数据修改，会生成一个新的Immutable对象。<br>Immutable.js库就是这样的理念</li>
-<li>Immutable的优点<br>复杂度降低；节省了内存，因为节点是共享的；重做/撤销、复制/粘贴都可以实现，老数据都存着呢；并发安全，对于JS来说好像无关紧要，单线程。。；拥抱函数式编程，其本就是函数式编程的概念。</li>
-<li>缺点<br>api还是和原生map array有区别</li>
-<li>Immutable 与 PureRender<br>用immutable的<code>is</code>去改造shouldComponentUpdate即可</li>
-</ol>
-<h4 id="key"><a href="#key" class="headerlink" title="key"></a>key</h4><p><code>Array&lt;Element&gt;</code>渲染时，每一个item都要唯一的key，切不建议使用index，建议使用id或shortid</p>
-<h4 id="性能检测工具react-addons-perf"><a href="#性能检测工具react-addons-perf" class="headerlink" title="性能检测工具react-addons-perf"></a>性能检测工具react-addons-perf</h4><p>使用<code>Perf.start()</code>和<code>Perf.stop()</code>分析</p>
-<h2 id="6-动画"><a href="#6-动画" class="headerlink" title="6.动画"></a>6.动画</h2><p>后续添加</p>
-<h2 id="7-自动化测试"><a href="#7-自动化测试" class="headerlink" title="7.自动化测试"></a>7.自动化测试</h2><p>后续添加</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ig505gi.github.io/myBlog/2021/11/29/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter1-2/" data-id="ckwku9ty50001zyztd5ed4scd" data-title="深入React技术栈-Chapter1-2" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myBlog/tags/Fonted/" rel="tag">Fonted</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myBlog/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/myBlog/tags/React/" rel="tag">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/myBlog/2021/05/09/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-05-09T09:50:34.414Z" itemprop="datePublished">2021-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/myBlog/2021/05/09/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ig505gi.github.io/myBlog/2021/05/09/hello-world/" data-id="ckwku9ty00000zyzt16ymf2jz" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
