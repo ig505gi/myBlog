@@ -118,8 +118,17 @@
 <li>有属性浏览器版本信息、名称、插件、环境等</li>
 <li>注册处理程序<code>registerContentHandler()</code>和<code>registerProtocolHandler()</code>方法，跟RSS和在线电子邮件有关<h4 id="screen对象"><a href="#screen对象" class="headerlink" title="screen对象"></a>screen对象</h4>能够拿到一些屏幕的硬件信息：PPI、像素、刷新率等，对于编程意义不大<h4 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h4>安全的：开发者是不能知道用户访问过那些网页的<br>方法：go/back/forward</li>
 </ul>
-<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>DOM（文档对象类型）是针对HTML和XML文档的一个API。</p>
-
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>DOM（文档对象类型）是针对HTML和XML文档的一个API。<br>DOM 可以将任何HTML或XML文档描绘成一个由多层节点构成的结构。节点分为几种不同的类型。如下多种：</p>
+<h4 id="1-Node类型"><a href="#1-Node类型" class="headerlink" title="1. Node类型"></a>1. Node类型</h4><ul>
+<li>其它节点都继承自Node类型，每个节点都有一个<code>nodeType</code>的属性，记录了其类型</li>
+<li>每个节点都有这样或那样的关系。每个节点都有一个<code>childNodes</code>属性，其中保存着一个<code>NodeList</code>对象</li>
+<li>每个节点都有一个<code>parentNode</code>属性，该属性指向文档树中的父节点<br><img src="/myBlog/.io//Node%E7%B1%BB%E5%9E%8B%E6%9F%A5%E8%AF%A2%E5%B1%9E%E6%80%A7.png" alt="Node类型查询属性.png"></li>
+<li>常用方法<code>appendChild()</code>。用于向<code>childNodes</code>列表的末尾添加一个节点。</li>
+<li>常用方法<code>insertBefore()</code>。这个方法接受两个参数:要插入的节点和作为参照的节点。</li>
+<li>常用方法<code>replaceChild()</code>。这个方法接受两个参数:要插入的节点和要替换的节点。</li>
+<li>其他方法<code>cloneNode()</code>可以深浅复制；<code>normalize()</code>处理文档树中的文本节点。<h4 id="2-Document类型"><a href="#2-Document类型" class="headerlink" title="2. Document类型"></a>2. Document类型</h4></li>
+</ul>
+<h4 id="3-Element类型"><a href="#3-Element类型" class="headerlink" title="3. Element类型"></a>3. Element类型</h4><h4 id="4-Text类型"><a href="#4-Text类型" class="headerlink" title="4. Text类型"></a>4. Text类型</h4><h4 id="5-9-其它类型"><a href="#5-9-其它类型" class="headerlink" title="5-9. 其它类型"></a>5-9. 其它类型</h4>
       
     </div>
     <footer class="article-footer">
