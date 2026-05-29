@@ -1,20 +1,80 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Java面向对象-慕课学习笔记 - Ian Gao‘s Blog</title><link rel="manifest" href="/myBlog/manifest.json"><meta name="application-name" content="Ian Gao’s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ian Gao’s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="aaaaaaa"><meta property="og:type" content="blog"><meta property="og:title" content="Java面向对象-慕课学习笔记"><meta property="og:url" content="https://ig505gi.github.io/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><meta property="og:site_name" content="Ian Gao‘s Blog"><meta property="og:description" content="aaaaaaa"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/package.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8C%BF%E5%90%8D%E7%B1%BB.png"><meta property="article:published_time" content="2018-12-25T12:28:23.000Z"><meta property="article:modified_time" content="2022-07-10T15:00:31.243Z"><meta property="article:author" content="Ian Gao"><meta property="article:tag" content="Mooc"><meta property="article:tag" content="Java"><meta property="article:tag" content="Backend"><meta property="article:tag" content="OOP"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/package.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ig505gi.github.io/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"},"headline":"Java面向对象-慕课学习笔记","image":["https://ig505gi.github.io/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/package.png","https://ig505gi.github.io/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8C%BF%E5%90%8D%E7%B1%BB.png"],"datePublished":"2018-12-25T12:28:23.000Z","dateModified":"2022-07-10T15:00:31.243Z","author":{"@type":"Person","name":"Ian Gao"},"publisher":{"@type":"Organization","name":"Ian Gao‘s Blog","logo":{"@type":"ImageObject","url":{"text":"IG"}}},"description":"简介：慕课网课笔记，主要讲述Java的面向对象思想。用对象思考，用类来写作课程地址：https:&#x2F;&#x2F;www.icourse163.org&#x2F;course&#x2F;ZJU-1001542001?tid&#x3D;1003687002作业仓库：https:&#x2F;&#x2F;github.com&#x2F;ig505gi&#x2F;JAVA-Course Part11.类的定义"}</script><link rel="canonical" href="https://ig505gi.github.io/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="icon" href="/myBlog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/myBlog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/myBlog/">IG</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/myBlog/">首页</a><a class="navbar-item" href="/myBlog/archives">文章进程</a><a class="navbar-item" href="/myBlog/categories">标签</a><a class="navbar-item" href="/myBlog/tags">分类</a><a class="navbar-item" href="https://ig505gi.github.io">关于我</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ig505gi"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2018-12-25T12:28:23.000Z" title="2018/12/25 下午8:28:23">2018-12-25</time>发表</span><span class="level-item"><time dateTime="2022-07-10T15:00:31.243Z" title="2022/7/10 下午11:00:31">2022-07-10</time>更新</span><span class="level-item"><a class="link-muted" href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/">CS网课笔记</a></span><span class="level-item">17 分钟读完 (大约2594个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Java面向对象-慕课学习笔记</h1><div class="content"><p>简介：慕课网课笔记，主要讲述Java的面向对象思想。用对象思考，用类来写作<br>课程地址：<a target="_blank" rel="noopener" href="https://www.icourse163.org/course/ZJU-1001542001?tid=1003687002">https://www.icourse163.org/course/ZJU-1001542001?tid=1003687002</a><br>作业仓库：<a target="_blank" rel="noopener" href="https://github.com/ig505gi/JAVA-Course">https://github.com/ig505gi/JAVA-Course</a></p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Java面向对象-慕课学习笔记 — Ian Gao‘s Blog</title>
+  
+<link rel="stylesheet" href="/myBlog/css/style.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body class="page-post">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/myBlog/" class="site-logo">Ian Gao‘s Blog</a>
+      <nav class="header-nav" id="headerNav">
+        <div class="cat-dropdown" id="catDropdown">
+          <button class="cat-btn" id="catBtn">
+            全部文章
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="cat-menu" id="catMenu">
+            <a href="/myBlog/">全部文章</a>
+            
+              <a href="/myBlog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+            
+          </div>
+        </div>
+        
+          <a href="https://github.com/ig505gi" class="header-link" target="_blank" rel="noopener">GitHub</a>
+        
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    
+<div class="article-wrap">
+  <div class="article-main">
+    <article>
+      <header class="article-header">
+        
+        <div class="breadcrumb">
+          <a href="/myBlog/">首页</a>
+          <span>/</span>
+          <a href="/myBlog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+        </div>
+        
+        <h1>Java面向对象-慕课学习笔记</h1>
+        <div class="article-meta">
+          
+            <span class="tag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;flex-shrink:0"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>学习笔记</span>
+          
+        </div>
+      </header>
+
+      <div class="article-body">
+        <p>简介：慕课网课笔记，主要讲述Java的面向对象思想。用对象思考，用类来写作<br>课程地址：<a target="_blank" rel="noopener" href="https://www.icourse163.org/course/ZJU-1001542001?tid=1003687002">https://www.icourse163.org/course/ZJU-1001542001?tid=1003687002</a><br>作业仓库：<a target="_blank" rel="noopener" href="https://github.com/ig505gi/JAVA-Course">https://github.com/ig505gi/JAVA-Course</a></p>
 <h1 id="Part1"><a href="#Part1" class="headerlink" title="Part1"></a>Part1</h1><h2 id="1-类的定义"><a href="#1-类的定义" class="headerlink" title="1.类的定义"></a>1.类的定义</h2><span id="more"></span>
 <h3 id="1-1-对象、函数"><a href="#1-1-对象、函数" class="headerlink" title="1.1 对象、函数"></a>1.1 对象、函数</h3><p>对象 &#x3D; 属性 + 服务<br>数据：属性，状态<br>操作：函数<br>操作是包含着数据的，把数据和对数据的操作放在一起，数据不对外面公开–&gt;<strong>封装</strong></p>
 <h3 id="1-2-this"><a href="#1-2-this" class="headerlink" title="1.2 this"></a>1.2 this</h3><p>在成员函数内部可以用this调用其他成员函数</p>
-<h3 id="1-3-成员变量-amp-本地变量"><a href="#1-3-成员变量-amp-本地变量" class="headerlink" title="1.3 成员变量&amp;本地变量"></a>1.3 成员变量&amp;本地变量</h3><p>本地变量：生存期和作用域都在函数内部，定义在函数内部<br>成员变量：生存期是对象的生成期，作用域是类中的成员函数，定义在类中</p>
+<h3 id="1-3-成员变量-本地变量"><a href="#1-3-成员变量-本地变量" class="headerlink" title="1.3 成员变量&amp;本地变量"></a>1.3 成员变量&amp;本地变量</h3><p>本地变量：生存期和作用域都在函数内部，定义在函数内部<br>成员变量：生存期是对象的生成期，作用域是类中的成员函数，定义在类中</p>
 <h3 id="1-4-构造函数"><a href="#1-4-构造函数" class="headerlink" title="1.4 构造函数"></a>1.4 构造函数</h3><p>构造函数与类名相同，没有返回类型，<br><strong>重载</strong>：可以有多个构造函数，根据参数不同调用不同的构造函数<br>创建对象的时候，先调用构造函数，再初始化成员变量，再进入构造函数内部。</p>
 <h3 id="1-5-toString"><a href="#1-5-toString" class="headerlink" title="1.5 toString()"></a>1.5 toString()</h3><p>可以用于任何一个类中，使类的输出变成想要的结果</p>
 <h2 id="2-对象交互"><a href="#2-对象交互" class="headerlink" title="2 对象交互"></a>2 对象交互</h2><h3 id="2-1-访问属性"><a href="#2-1-访问属性" class="headerlink" title="2.1 访问属性"></a>2.1 访问属性</h3><p><strong>private</strong><br>私有成员是类的私有，不是对象的私有，可以在类中访问不同对象的私有变量。<br><strong>friendly</strong><br>如果前面不加访问属性，就是friendly，在同一个包里可以使用  </p>
 <h3 id="2-2-类变量"><a href="#2-2-类变量" class="headerlink" title="2.2 类变量"></a>2.2 类变量</h3><p><strong>static</strong> 静态变量，是类的变量，不是对象的变量，可以用”类.“去访问<br>同样，函数前加 static，函数是类函数。<br><strong>static函数只能调用static函数，只能访问static变量</strong></p>
-<h3 id="2-3-public-amp-编译单元"><a href="#2-3-public-amp-编译单元" class="headerlink" title="2.3  public&amp;编译单元"></a>2.3  public&amp;编译单元</h3><p>public 类的定义加上public，该类一定在以该类命名的java文件中，如：<br><code>public class test&#123;&#125;</code> 一定在test.java中<br>一个 **.java是一个编译单元，里面只能有一个public类，并且和文件名相同</p>
+<h3 id="2-3-public-编译单元"><a href="#2-3-public-编译单元" class="headerlink" title="2.3  public&amp;编译单元"></a>2.3  public&amp;编译单元</h3><p>public 类的定义加上public，该类一定在以该类命名的java文件中，如：<br><code>public class test{}</code> 一定在test.java中<br>一个 **.java是一个编译单元，里面只能有一个public类，并且和文件名相同</p>
 <h2 id="3-包"><a href="#3-包" class="headerlink" title="3 包"></a>3 包</h2><h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1"></a>3.1</h3><p>在一个包pac下面的的每个java文件一定有一行<code>package pac</code><br>包中类的调用方式：<br><img src="/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/package.png" alt="package"></p>
 <h2 id="4-对象容器"><a href="#4-对象容器" class="headerlink" title="4 对象容器"></a>4 对象容器</h2><h3 id="4-1-定义"><a href="#4-1-定义" class="headerlink" title="4.1 定义"></a>4.1 定义</h3><p><code>ArrayList&lt;String&gt; notes = new ArrayList&lt;String&gt;();</code><br>定义了一个存放String的ArrayList，ArrayList是一种范型类，就是一种容器<br>容器的输出带着方括号</p>
 <h3 id="4-2-对象数组"><a href="#4-2-对象数组" class="headerlink" title="4.2 对象数组"></a>4.2 对象数组</h3><p>对象数组的每一个元素都是对象的管理者，而非对象本身<br>不像int数组，for-each循环的时候，不能对每个元素赋值，<br>对象数组和对象容器都可以在for-each循环中，对对象的成员变量赋值。</p>
 <h3 id="4-3-set定义"><a href="#4-3-set定义" class="headerlink" title="4.3 set定义"></a>4.3 set定义</h3><p><code>HashSet&lt;String&gt; notes = new HashSet&lt;String&gt;();</code><br>HashSet没有重复元素，乱序</p>
 <h3 id="4-4-Hash-类似python中字典"><a href="#4-4-Hash-类似python中字典" class="headerlink" title="4.4 Hash(类似python中字典)"></a>4.4 Hash(类似python中字典)</h3><p><code>HashMap&lt;Integer, String&gt; hm = new Hashmap&lt;Integer, String&gt;();</code><br>需要用Integer，int的包裹类型，都是类的名字<br><code>hm.put(5, &quot;five&quot;)</code> 用于往HashMap的对象中放元素<br>重复key进行put，value会覆盖</p>
-<h2 id="5-继承与多态"><a href="#5-继承与多态" class="headerlink" title="5.继承与多态"></a>5.继承与多态</h2><h3 id="5-1-定义"><a href="#5-1-定义" class="headerlink" title="5.1 定义"></a>5.1 定义</h3><p><code>class &lt;子类名字&gt; extends &lt;父类名字&gt; &#123;&#125;</code>  </p>
+<h2 id="5-继承与多态"><a href="#5-继承与多态" class="headerlink" title="5.继承与多态"></a>5.继承与多态</h2><h3 id="5-1-定义"><a href="#5-1-定义" class="headerlink" title="5.1 定义"></a>5.1 定义</h3><p><code>class &lt;子类名字&gt; extends &lt;父类名字&gt; {}</code>  </p>
 <h3 id="5-2-父子类的关系"><a href="#5-2-父子类的关系" class="headerlink" title="5.2 父子类的关系"></a>5.2 父子类的关系</h3><table>
 <thead>
 <tr>
@@ -52,10 +112,10 @@
 <p>用括号加类型放在变量前面的操作就叫做<strong>造型</strong><br>造型和（int）转换类型不同的！！一个是转换类型，一个是造型<br>造型时，有可能出现<strong>ClassCastException的错误</strong></p>
 <h3 id="5-5-绑定"><a href="#5-5-绑定" class="headerlink" title="5.5 绑定"></a>5.5 绑定</h3><p>当调用一个方法时，究竟应该调用哪个方法，这件事情叫做绑定。<br>绑定有两种：一种是早绑定，又称静态绑定，这种绑定在编译的时候就确定了，根据变量的<strong>声明类型</strong>决定；<br>另一种是晚绑定，即动态绑定。动态绑定在根据变量的<strong>动态类型</strong>决定。<br>Java缺省使用动态绑定。</p>
 <h3 id="5-6-override"><a href="#5-6-override" class="headerlink" title="5.6 override"></a>5.6 override</h3><p><strong>override 覆盖</strong><br>通过父类的对象调用存在覆盖关系的函数时，会调用变量但是所管理的对象的类的函数<br>利用IDE进行override时 在函数上会有<code>@Override</code>字段，<br>如果该覆盖函数与父类的访问属性、返回类型、名称、参数表<strong>有不同，就会报错</strong></p>
-<h2 id="6-抽象类"><a href="#6-抽象类" class="headerlink" title="6 抽象类"></a>6 抽象类</h2><h3 id="6-1-定义"><a href="#6-1-定义" class="headerlink" title="6.1 定义"></a>6.1 定义</h3><p><code>public class abstract shape&#123;     public abstract void draw(Graphcs g); &#125;</code><br>我们没有想过要真正实现一个shape类的对象, 但是要保存一些图形共有的属性。<br>抽象类不能实例化  </p>
+<h2 id="6-抽象类"><a href="#6-抽象类" class="headerlink" title="6 抽象类"></a>6 抽象类</h2><h3 id="6-1-定义"><a href="#6-1-定义" class="headerlink" title="6.1 定义"></a>6.1 定义</h3><p><code>public class abstract shape{     public abstract void draw(Graphcs g); }</code><br>我们没有想过要真正实现一个shape类的对象, 但是要保存一些图形共有的属性。<br>抽象类不能实例化  </p>
 <p>子类中的函数<strong>必须</strong>全都覆盖抽象父类中的抽象函数，这叫做<strong>实现</strong><br>如果没有全部实现，子类也是抽象类</p>
 <h2 id="7-接口"><a href="#7-接口" class="headerlink" title="7. 接口"></a>7. 接口</h2><h3 id="7-1-定义"><a href="#7-1-定义" class="headerlink" title="7.1 定义"></a>7.1 定义</h3><p>声明 <code>public interface 接口名</code><br>接口是纯抽象类<br>所有的成员函数都是抽象函数，所有的成员变量声明都是 <code>public static final</code><br>接口规定了长什么样，但不管里面是什么</p>
-<h3 id="7-2-类实现"><a href="#7-2-类实现" class="headerlink" title="7.2 类实现"></a>7.2 类实现</h3><p>如何<strong>声明</strong><br><code>public class Fox extands Animal implements Cell &#123;&#125;</code><br>定义了一个 Fox类，继承自 Animal类， 实现了 Cell接口</p>
+<h3 id="7-2-类实现"><a href="#7-2-类实现" class="headerlink" title="7.2 类实现"></a>7.2 类实现</h3><p>如何<strong>声明</strong><br><code>public class Fox extands Animal implements Cell {}</code><br>定义了一个 Fox类，继承自 Animal类， 实现了 Cell接口</p>
 <h3 id="7-3-接口变量-自己命名"><a href="#7-3-接口变量-自己命名" class="headerlink" title="7.3 接口变量(自己命名)"></a>7.3 接口变量(自己命名)</h3><p><code>Cell c = new Fox();</code><br>一个Cell接口的变量可以赋于任何一个实现了Cell接口的类  </p>
 <h3 id="7-4-使用规则"><a href="#7-4-使用规则" class="headerlink" title="7.4 使用规则"></a>7.4 使用规则</h3><p>（1）接口是一种特殊的类，在使用上一样<br>（2）类可以实现很多接口<br>（3）接口可以继承接口，但不能继承类<br>（4）接口不能实现接口  </p>
 <h2 id="8-内部类"><a href="#8-内部类" class="headerlink" title="8. 内部类"></a>8. 内部类</h2><p>在一个A类的内部定义了一个B类，我就称这个B类为内部类<br>内部类B<strong>可以访问A类的成员函数、成员变量</strong>，<br>如果定义在A的外部，如果B想访问A类的成员，需要将A类实例化（<strong>很麻烦</strong>）</p>
@@ -80,57 +140,48 @@
 <ul>
 <li>在18年学习的，但是未发布在个人博客，2022年整理并同步到个人博客</li>
 </ul>
-</div><div class="article-licensing box"><div class="licensing-title"><p>Java面向对象-慕课学习笔记</p><p><a href="https://ig505gi.github.io/myBlog/2018/12/25/Java面向对象-慕课学习笔记/">https://ig505gi.github.io/myBlog/2018/12/25/Java面向对象-慕课学习笔记/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ian Gao</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2018-12-25</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-07-10</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/myBlog/tags/Mooc/">Mooc</a><a class="link-muted mr-2" rel="tag" href="/myBlog/tags/Java/">Java</a><a class="link-muted mr-2" rel="tag" href="/myBlog/tags/Backend/">Backend</a><a class="link-muted mr-2" rel="tag" href="/myBlog/tags/OOP/">OOP</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/myBlog/2021/05/15/Effective-javascript/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Effective javascript</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/myBlog/2018/12/24/%E9%9B%B6%E5%9F%BA%E7%A1%80Java-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="level-item">零基础Java-慕课学习笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
-            this.page.url = 'https://ig505gi.github.io/myBlog/2018/12/25/Java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-%E6%85%95%E8%AF%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/';
-            this.page.identifier = '2018/12/25/Java面向对象-慕课学习笔记/';
-        };
-        (function() {
-            var d = document, s = d.createElement('script');  
-            s.src = '//' + '留个言吧~' + '.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/myBlog/img/avatar.png" alt="Ian Gao"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ian Gao</p><p class="is-size-6 is-block">前端开发</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国/上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/myBlog/archives"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/myBlog/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/myBlog/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ig505gi" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ig505gi"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="豆瓣" href="https://www.douban.com/people/174677372"><i class="fab fa-dailymotion"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="知乎" href="https://www.zhihu.com/people/ni-cai-72-80"><i class="fab fa-zhihu"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">CS网课笔记</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/myBlog/categories/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">技术书籍笔记</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-22T11:00:09.000Z">2022-08-22</time></p><p class="title"><a href="/myBlog/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">计算机网络-学习笔记</a></p><p class="categories"><a href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/">CS网课笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-10T08:28:17.000Z">2022-07-10</time></p><p class="title"><a href="/myBlog/2022/07/10/Nand2Tetris-Part2/">Nand2Tetris-Part2</a></p><p class="categories"><a href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/">CS网课笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-06-18T04:05:49.000Z">2022-06-18</time></p><p class="title"><a href="/myBlog/2022/06/18/Nand2Tetris-Part1/">Nand2Tetris Part1</a></p><p class="categories"><a href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/">CS网课笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-21T14:04:08.000Z">2022-03-21</time></p><p class="title"><a href="/myBlog/2022/03/21/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">JavaScript高级程序设计</a></p><p class="categories"><a href="/myBlog/categories/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/">技术书籍笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-21T00:47:40.000Z">2022-02-21</time></p><p class="title"><a href="/myBlog/2022/02/21/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter3-React%E6%BA%90%E7%A0%81/">深入React技术栈-Chapter3-React源码</a></p><p class="categories"><a href="/myBlog/categories/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/">技术书籍笔记</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myBlog/archives/2022/08/"><span class="level-start"><span class="level-item">八月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2022/06/"><span class="level-start"><span class="level-item">六月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2022/03/"><span class="level-start"><span class="level-item">三月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2018/12/"><span class="level-start"><span class="level-item">十二月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/myBlog/tags/Backend/"><span class="tag">Backend</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Computer-Science/"><span class="tag">Computer Science</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Coursera/"><span class="tag">Coursera</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Fronted/"><span class="tag">Fronted</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Full-Stack/"><span class="tag">Full Stack</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Java/"><span class="tag">Java</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Mooc/"><span class="tag">Mooc</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Network/"><span class="tag">Network</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/OOP/"><span class="tag">OOP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/React/"><span class="tag">React</span><span class="tag">2</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/myBlog/">IG</a><p class="is-size-7"><span>&copy; 2022 Ian Gao</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ig505gi"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/myBlog/js/column.js"></script><script src="/myBlog/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/myBlog/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/myBlog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/myBlog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/myBlog/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+
+      </div>
+
+      <div class="article-tags">
+        <span class="tag">2018-12-25</span>
+        <span class="tag">2594 字</span>
+        
+          <span class="tag cat">学习笔记</span>
+        
+      </div>
+    </article>
+  </div>
+
+  <aside class="toc-sidebar" id="tocSidebar">
+    <div class="toc-label" id="tocLabel">目录</div>
+    <nav id="tocNav"></nav>
+  </aside>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2015–2026 Ian Gao‘s Blog</p>
+    
+      <p class="busuanzi">
+        <span id="busuanzi_container_site_pv">访问量 <span id="busuanzi_value_site_pv">-</span></span>
+        &middot;
+        <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv">-</span></span>
+      </p>
+    
+  </footer>
+
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  
+<script src="/myBlog/js/main.js"></script>
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</body>
+</html>

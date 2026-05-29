@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ian Gao‘s Blog</title>
+  
+<link rel="stylesheet" href="/myBlog/css/style.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body class="page-post">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/myBlog/" class="site-logo">Ian Gao‘s Blog</a>
+      <nav class="header-nav" id="headerNav">
+        <div class="cat-dropdown" id="catDropdown">
+          <button class="cat-btn" id="catBtn">
+            全部文章
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="cat-menu" id="catMenu">
+            <a href="/myBlog/">全部文章</a>
+            
+              <a href="/myBlog/categories/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/">技术书籍笔记</a>
+            
+              <a href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/">CS网课笔记</a>
+            
+          </div>
+        </div>
+        
+          <a href="https://github.com/ig505gi" class="header-link" target="_blank" rel="noopener">GitHub</a>
+        
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    
+<div class="article-wrap">
+  <div class="article-main">
+    <article>
+      <header class="article-header">
+        
+        <h1>未命名文章</h1>
+        <div class="article-meta">
+          
+        </div>
+      </header>
+
+      <div class="article-body">
+        <h1 id="从浏览器多进程到JS单线程"><a href="#从浏览器多进程到JS单线程" class="headerlink" title="从浏览器多进程到JS单线程"></a>从浏览器多进程到JS单线程</h1><ol>
+<li><h2 id="浏览器是多进程的"><a href="#浏览器是多进程的" class="headerlink" title="浏览器是多进程的"></a>浏览器是多进程的</h2></li>
+<li><h2 id="浏览器都包含哪些进程？"><a href="#浏览器都包含哪些进程？" class="headerlink" title="浏览器都包含哪些进程？"></a>浏览器都包含哪些进程？</h2><ul>
+<li>Browser进程：浏览器的主进程（负责协调、主控），只有一个。作用有<ul>
+<li>负责浏览器界面显示，与用户交互。如前进，后退等</li>
+<li>负责各个页面的管理，创建和销毁其他进程</li>
+<li>将Renderer进程得到的内存中的Bitmap，绘制到用户界面上</li>
+<li>网络资源的管理，下载等</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>第三方插件进程：每种类型的插件对应一个进程，仅当使用该插件时才创建</li>
+<li>GPU进程：最多一个，用于3D绘制等</li>
+<li>浏览器渲染进程（浏览器内核）（Renderer进程，内部是多线程的）：默认每个Tab页面一个进程，互不影响。</li>
+</ul>
+<h4 id="2-1-浏览器多进程的优势"><a href="#2-1-浏览器多进程的优势" class="headerlink" title="2.1. 浏览器多进程的优势"></a>2.1. 浏览器多进程的优势</h4></li>
+</ol>
+<ul>
+<li>避免单个page crash影响整个浏览器</li>
+<li>避免第三方插件crash影响整个浏览器</li>
+<li>多进程充分利用多核优势</li>
+<li>方便使用沙盒模型隔离插件等进程，提高浏览器稳定性</li>
+</ul>
+<h4 id="2-2-重点是浏览器内核（渲染进程）"><a href="#2-2-重点是浏览器内核（渲染进程）" class="headerlink" title="2.2. 重点是浏览器内核（渲染进程）"></a>2.2. 重点是浏览器内核（渲染进程）</h4><p><em><strong>浏览器的渲染进程是多线程的</strong></em></p>
+<ul>
+<li><ol>
+<li>GUI渲染线程</li>
+</ol>
+<ul>
+<li>负责渲染浏览器界面，解析HTML，CSS，构建DOM树和RenderObject树，布局和绘制等。</li>
+<li>当界面需要重绘（Repaint）或由于某种操作引发回流(reflow)时，该线程就会执行</li>
+<li>注意，<strong>GUI渲染线程与JS引擎线程是互斥的</strong>，当JS引擎执行时GUI线程会被挂起（相当于被冻结了），GUI更新会被保存在一个队列中<strong>等到JS引擎空闲时</strong>立即被执行。<ul>
+<li><ol start="2">
+<li>JS引擎线程</li>
+</ol>
+<ul>
+<li>也称为JS内核，负责处理Javascript脚本程序。（例如V8引擎）</li>
+<li>JS引擎线程负责解析Javascript脚本，运行代码。</li>
+<li>JS引擎一直等待着任务队列中任务的到来，然后加以处理，一个Tab页（renderer进程）中无论什么时候都只有一个JS线程在运行JS程序</li>
+<li>同样注意，<strong>GUI渲染线程与JS引擎线程是互斥的</strong>，所以如果JS执行的时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞。</li>
+</ul>
+</li>
+<li><ol start="3">
+<li>事件触发线程</li>
+</ol>
+<ul>
+<li>归属于浏览器而不是JS引擎，用来控制事件循环（可以理解，JS引擎自己都忙不过来，需要浏览器另开线程协助）</li>
+<li>当JS引擎执行代码块如setTimeOut时（也可来自浏览器内核的其他线程,如鼠标点击、AJAX异步请求等），会将对应任务添加到事件线程中</li>
+<li>当对应的事件符合触发条件被触发时，该线程会把事件添加到待处理队列的队尾，等待JS引擎的处理</li>
+<li>注意，由于JS的单线程关系，所以这些待处理队列中的事件都得排队等待JS引擎处理（当JS引擎空闲时才会去执行）</li>
+</ul>
+</li>
+<li><ol start="4">
+<li>定时触发器线程</li>
+</ol>
+<ul>
+<li>传说中的<code>setInterval</code>与<code>setTimeout</code>所在线程</li>
+<li>浏览器定时计数器并不是由JavaScript引擎计数的,（因为JavaScript引擎是单线程的, 如果处于阻塞线程状态就会影响记计时的准确）<ul>
+<li>因此通过单独线程来计时并触发定时（计时完毕后，添加到事件队列中，等待JS引擎空闲后执行）</li>
+<li>注意，W3C在HTML标准中规定，规定要求setTimeout中低于4ms的时间间隔算为4ms。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ol start="5">
+<li>异步http请求线程</li>
+</ol>
+<ul>
+<li>在XMLHttpRequest在连接后是通过浏览器新开一个线程请求</li>
+<li>将检测到状态变更时，如果设置有回调函数，异步线程就<strong>产生状态变更事件</strong>，将这个回调再放入事件队列中。再由JavaScript引擎执行。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-3-Browser进程和浏览器内核（Renderer进程）的通信过程"><a href="#2-3-Browser进程和浏览器内核（Renderer进程）的通信过程" class="headerlink" title="2.3. Browser进程和浏览器内核（Renderer进程）的通信过程"></a>2.3. Browser进程和浏览器内核（Renderer进程）的通信过程</h4><p><img src="/myBlog/2023/02/03/%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%88%B0JS%E5%8D%95%E7%BA%BF%E7%A8%8B/browser%E9%80%9A%E4%BF%A1.tiff" alt="browser通信"></p>
+<ol>
+<li><h2 id="梳理浏览器内核中线程之间的关系"><a href="#梳理浏览器内核中线程之间的关系" class="headerlink" title="梳理浏览器内核中线程之间的关系"></a>梳理浏览器内核中线程之间的关系</h2></li>
+</ol>
+<h4 id="GUI渲染线程与JS引擎线程互斥"><a href="#GUI渲染线程与JS引擎线程互斥" class="headerlink" title="GUI渲染线程与JS引擎线程互斥"></a>GUI渲染线程与JS引擎线程互斥</h4><h4 id="JS阻塞页面加载"><a href="#JS阻塞页面加载" class="headerlink" title="JS阻塞页面加载"></a>JS阻塞页面加载</h4><h4 id="WebWorker，JS的多线程？"><a href="#WebWorker，JS的多线程？" class="headerlink" title="WebWorker，JS的多线程？"></a>WebWorker，JS的多线程？</h4><ul>
+<li>创建Worker时，JS引擎向浏览器申请开一个子线程（子线程是浏览器开的，完全受主线程控制，而且不能操作DOM）</li>
+<li>JS引擎线程与worker线程间通过特定的方式通信（postMessage API，需要通过序列化对象来与线程交互特定的数据）</li>
+</ul>
+<h4 id="WebWorker与SharedWorker"><a href="#WebWorker与SharedWorker" class="headerlink" title="WebWorker与SharedWorker"></a>WebWorker与SharedWorker</h4><ul>
+<li>WebWorker只属于某个页面，不会和其他页面的Render进程（浏览器内核进程）共享</li>
+<li>SharedWorker是浏览器所有页面共享的，不能采用与Worker同样的方式实现，因为它不隶属于某个Render进程，可以为多个Render进程共享使用</li>
+</ul>
+<ul>
+<li><h2 id="简单梳理下浏览器渲染流程"><a href="#简单梳理下浏览器渲染流程" class="headerlink" title="简单梳理下浏览器渲染流程"></a>简单梳理下浏览器渲染流程</h2></li>
+</ul>
+<p>浏览器器内核拿到内容后，渲染大概可以划分成以下几个步骤：</p>
+<ol>
+<li>解析html建立dom树</li>
+<li>解析css构建render树（将CSS代码解析成树形的数据结构，然后结合DOM合并成render树）</li>
+<li>布局render树（Layout&#x2F;reflow），负责各元素尺寸、位置的计算</li>
+<li>绘制render树（paint），绘制页面像素信息</li>
+<li>浏览器会将各层的信息发送给GPU，GPU会将各层合成（composite），显示在屏幕上。</li>
+</ol>
+<p>所有详细步骤都已经略去，渲染完毕后就是<code>load</code>事件了，之后就是自己的JS逻辑处理了</p>
+<h4 id="load事件与DOMContentLoaded事件的先后"><a href="#load事件与DOMContentLoaded事件的先后" class="headerlink" title="load事件与DOMContentLoaded事件的先后"></a>load事件与DOMContentLoaded事件的先后</h4><h4 id="css加载是否会阻塞dom树渲染？"><a href="#css加载是否会阻塞dom树渲染？" class="headerlink" title="css加载是否会阻塞dom树渲染？"></a>css加载是否会阻塞dom树渲染？</h4><h4 id="普通图层和复合图层"><a href="#普通图层和复合图层" class="headerlink" title="普通图层和复合图层"></a>普通图层和复合图层</h4><ol start="4">
+<li><h2 id="从Event-Loop谈JS的运行机制"><a href="#从Event-Loop谈JS的运行机制" class="headerlink" title="从Event Loop谈JS的运行机制"></a>从Event Loop谈JS的运行机制</h2><ul>
+<li>JS分为同步任务和异步任务</li>
+<li>同步任务都在主线程上执行，形成一个<code>执行栈</code></li>
+<li>主线程之外，<strong>事件触发线程</strong>管理着一个<code>任务队列</code>，只要异步任务有了运行结果，就在<code>任务队列</code>之中放置一个事件。</li>
+<li>一旦<code>执行栈</code>中的所有同步任务执行完毕（此时JS引擎空闲），系统就会读取<code>任务队列</code>，将可运行的异步任务添加到可执行栈中，开始执行。</li>
+</ul>
+</li>
+</ol>
+<p><img src="/myBlog/2023/02/03/%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%88%B0JS%E5%8D%95%E7%BA%BF%E7%A8%8B/EventLoop.tiff" alt="EventLoop"></p>
+<h4 id="单独说说定时器"><a href="#单独说说定时器" class="headerlink" title="单独说说定时器"></a>单独说说定时器</h4><ul>
+<li>为什么要单独的定时器线程？因为JavaScript引擎是单线程的, 如果处于阻塞线程状态就会影响记计时的准确，因此很有必要单独开一个线程用来计时。</li>
+<li>什么时候会用到定时器线程？<strong>当使用<code>setTimeout</code>或<code>setInterval</code>时</strong>，它需要定时器线程计时，计时完成后就会将特定的事件推入事件队列中。</li>
+</ul>
+<h2 id="5-事件循环进阶：macrotask与microtask"><a href="#5-事件循环进阶：macrotask与microtask" class="headerlink" title="5. 事件循环进阶：macrotask与microtask"></a>5. 事件循环进阶：macrotask与microtask</h2><p>除了广义的同步任务和异步任务，我们对任务有更精细的定义：</p>
+<ul>
+<li>macro-task(宏任务)：包括整体代码script，setTimeout，setInterval</li>
+<li>micro-task(微任务)：Promise，process.nextTick</li>
+</ul>
+<p>不同类型的任务会进入对应的Event Queue；事件循环的顺序，决定js代码的执行顺序。进入整体代码(宏任务)后，开始第一次循环。接着执行所有的微任务。然后再次从宏任务开始，找到其中一个任务队列执行完毕，再执行所有的微任务。</p>
+<p>（PS:这里process.nextTick有问题，运行环境不一样可能产生不一样的结果，还可能：并不是放在微任务后，而是宏任务执行完后，立马去执行这个回调，再去查询微任务）</p>
+<p><img src="/myBlog/2023/02/03/%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%88%B0JS%E5%8D%95%E7%BA%BF%E7%A8%8B/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1.tiff" alt="宏任务和微任务.tiff"></p>
+
+      </div>
+
+      <div class="article-tags">
+        <span class="tag">2023-02-03</span>
+        <span class="tag">2055 字</span>
+        
+      </div>
+    </article>
+  </div>
+
+  <aside class="toc-sidebar" id="tocSidebar">
+    <div class="toc-label" id="tocLabel">目录</div>
+    <nav id="tocNav"></nav>
+  </aside>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2015–2026 Ian Gao‘s Blog</p>
+    
+      <p class="busuanzi">
+        <span id="busuanzi_container_site_pv">访问量 <span id="busuanzi_value_site_pv">-</span></span>
+        &middot;
+        <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv">-</span></span>
+      </p>
+    
+  </footer>
+
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  
+<script src="/myBlog/js/main.js"></script>
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</body>
+</html>

@@ -1,11 +1,71 @@
-<!doctype html>
-<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Nand2Tetris-Part2 - Ian Gao‘s Blog</title><link rel="manifest" href="/myBlog/manifest.json"><meta name="application-name" content="Ian Gao’s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Ian Gao’s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="aaaaaaa"><meta property="og:type" content="blog"><meta property="og:title" content="Nand2Tetris-Part2"><meta property="og:url" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/"><meta property="og:site_name" content="Ian Gao‘s Blog"><meta property="og:description" content="aaaaaaa"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/overview.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E4%BB%8E%E9%AB%98%E7%BA%A7%E5%88%B0%E4%BD%8E%E7%BA%A7.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/VM-part1.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/stack-function.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/stack-function2.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/memory-segment.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/pointer.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/stack-machine.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/local.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/static%E5%AE%9E%E7%8E%B0.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81pointer.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/pointer-segment%E5%AE%9E%E7%8E%B0.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E6%A0%87%E5%87%86VMmapping.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E6%A0%87%E5%87%86VMmapping2.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/translator%E6%9E%B6%E6%9E%84.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/parser%E7%B1%BBAPI.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/parser%E7%B1%BBAPI2.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/codeWriter%E7%B1%BBAPI.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/branching.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/function-overview.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/caller-and-callee.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/call-and-return.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/caller-view.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/callee-view.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/vm-view.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/handling-call.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/handling-function.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/handling-return.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/hack-vm-compilation.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/vm-special-symbols.png"><meta property="og:image" content="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/code-writer.png"><meta property="article:published_time" content="2022-07-10T08:28:17.000Z"><meta property="article:modified_time" content="2022-11-02T12:43:15.149Z"><meta property="article:author" content="Ian Gao"><meta property="article:tag" content="Coursera"><meta property="article:tag" content="Computer Science"><meta property="article:tag" content="Full Stack"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/overview.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/"},"headline":"Nand2Tetris-Part2","image":["https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/overview.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E4%BB%8E%E9%AB%98%E7%BA%A7%E5%88%B0%E4%BD%8E%E7%BA%A7.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/VM-part1.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/stack-function.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/stack-function2.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/memory-segment.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/pointer.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/stack-machine.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/local.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/static%E5%AE%9E%E7%8E%B0.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81pointer.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/pointer-segment%E5%AE%9E%E7%8E%B0.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E6%A0%87%E5%87%86VMmapping.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E6%A0%87%E5%87%86VMmapping2.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/translator%E6%9E%B6%E6%9E%84.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/parser%E7%B1%BBAPI.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/parser%E7%B1%BBAPI2.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week1/codeWriter%E7%B1%BBAPI.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/branching.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/function-overview.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/caller-and-callee.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/call-and-return.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/caller-view.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/callee-view.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/vm-view.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/handling-call.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/handling-function.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/handling-return.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/hack-vm-compilation.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/vm-special-symbols.png","https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/week2/code-writer.png"],"datePublished":"2022-07-10T08:28:17.000Z","dateModified":"2022-11-02T12:43:15.149Z","author":{"@type":"Person","name":"Ian Gao"},"publisher":{"@type":"Organization","name":"Ian Gao‘s Blog","logo":{"@type":"ImageObject","url":{"text":"IG"}}},"description":"简介：Coursera网课笔记，已经在Part1用硬件造出了电脑，准备实现OS、VM、编译器、高级编程语言。课程地址：https:&#x2F;&#x2F;www.coursera.org&#x2F;learn&#x2F;nand2tetris2作业仓库：https:&#x2F;&#x2F;github.com&#x2F;ig505gi&#x2F;Nand2Tetris-homework"}</script><link rel="canonical" href="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/"><link rel="icon" href="/myBlog/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/myBlog/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/myBlog/">IG</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/myBlog/">首页</a><a class="navbar-item" href="/myBlog/archives">文章进程</a><a class="navbar-item" href="/myBlog/categories">标签</a><a class="navbar-item" href="/myBlog/tags">分类</a><a class="navbar-item" href="https://ig505gi.github.io">关于我</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ig505gi"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-07-10T08:28:17.000Z" title="2022/7/10 下午4:28:17">2022-07-10</time>发表</span><span class="level-item"><time dateTime="2022-11-02T12:43:15.149Z" title="2022/11/2 下午8:43:15">2022-11-02</time>更新</span><span class="level-item"><a class="link-muted" href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/">CS网课笔记</a></span><span class="level-item">12 分钟读完 (大约1810个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Nand2Tetris-Part2</h1><div class="content"><p>简介：Coursera网课笔记，已经在Part1用硬件造出了电脑，准备实现OS、VM、编译器、高级编程语言。<br>课程地址：<a target="_blank" rel="noopener" href="https://www.coursera.org/learn/nand2tetris2">https://www.coursera.org/learn/nand2tetris2</a><br>作业仓库：<a target="_blank" rel="noopener" href="https://github.com/ig505gi/Nand2Tetris-homework">https://github.com/ig505gi/Nand2Tetris-homework</a></p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nand2Tetris-Part2 — Ian Gao‘s Blog</title>
+  
+<link rel="stylesheet" href="/myBlog/css/style.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body class="page-post">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/myBlog/" class="site-logo">Ian Gao‘s Blog</a>
+      <nav class="header-nav" id="headerNav">
+        <div class="cat-dropdown" id="catDropdown">
+          <button class="cat-btn" id="catBtn">
+            全部文章
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="cat-menu" id="catMenu">
+            <a href="/myBlog/">全部文章</a>
+            
+              <a href="/myBlog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+            
+          </div>
+        </div>
+        
+          <a href="https://github.com/ig505gi" class="header-link" target="_blank" rel="noopener">GitHub</a>
+        
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    
+<div class="article-wrap">
+  <div class="article-main">
+    <article>
+      <header class="article-header">
+        
+        <div class="breadcrumb">
+          <a href="/myBlog/">首页</a>
+          <span>/</span>
+          <a href="/myBlog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+        </div>
+        
+        <h1>Nand2Tetris-Part2</h1>
+        <div class="article-meta">
+          
+            <span class="tag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;flex-shrink:0"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>学习笔记</span>
+          
+        </div>
+      </header>
+
+      <div class="article-body">
+        <p>简介：Coursera网课笔记，已经在Part1用硬件造出了电脑，准备实现OS、VM、编译器、高级编程语言。<br>课程地址：<a target="_blank" rel="noopener" href="https://www.coursera.org/learn/nand2tetris2">https://www.coursera.org/learn/nand2tetris2</a><br>作业仓库：<a target="_blank" rel="noopener" href="https://github.com/ig505gi/Nand2Tetris-homework">https://github.com/ig505gi/Nand2Tetris-homework</a></p>
 <p><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/overview.png" alt="课程概览，part2为上面的软件部分"></p>
 <span id="more"></span>
 
 <h1 id="Week1-Overview和VM-part1"><a href="#Week1-Overview和VM-part1" class="headerlink" title="Week1 Overview和VM part1"></a><strong>Week1 Overview和VM part1</strong></h1><h2 id="0-Overview"><a href="#0-Overview" class="headerlink" title="0. Overview"></a>0. <strong>Overview</strong></h2><p>软件层面，我们如何从高级编程语言一步步转化为机器语言<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E4%BB%8E%E9%AB%98%E7%BA%A7%E5%88%B0%E4%BD%8E%E7%BA%A7.png" alt="高级编程语言到机器语言"><br>本周的内容主要是VM的实现part1</p>
 <h3 id="0-1-VM-Overview"><a href="#0-1-VM-Overview" class="headerlink" title="0.1 VM Overview"></a>0.1 VM Overview</h3><p>VM中应该有四种命令：算术&#x2F;逻辑、内存访问、分支、函数<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/VM-part1.png" alt="VM part1和part2"><br>本周为part1，作为project7，只会涉及算术&#x2F;逻辑、内存访问；而分支和函数则在week2作为part2，在project8中实现。</p>
-<h2 id="1-Stack-amp-Memory-Segment-concept"><a href="#1-Stack-amp-Memory-Segment-concept" class="headerlink" title="1. Stack &amp; Memory Segment concept"></a>1. <strong>Stack &amp; Memory Segment concept</strong></h2><h3 id="1-1-Stack"><a href="#1-1-Stack" class="headerlink" title="1.1 Stack"></a>1.1 Stack</h3><p>在VM中，重要的对象stack，stack除了我们所熟知的push和pop方法，还有一些可以简化操作的方法<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/stack-function.png" alt="Stack的方法"></p>
+<h2 id="1-Stack-Memory-Segment-concept"><a href="#1-Stack-Memory-Segment-concept" class="headerlink" title="1. Stack &amp; Memory Segment concept"></a>1. <strong>Stack &amp; Memory Segment concept</strong></h2><h3 id="1-1-Stack"><a href="#1-1-Stack" class="headerlink" title="1.1 Stack"></a>1.1 Stack</h3><p>在VM中，重要的对象stack，stack除了我们所熟知的push和pop方法，还有一些可以简化操作的方法<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/stack-function.png" alt="Stack的方法"></p>
 <ul>
 <li><code>add</code>: 将栈顶的两个值相加，并放回栈顶</li>
 <li><code>neg</code>: 对栈顶的值求负，并放回栈顶</li>
@@ -20,7 +80,7 @@
 <li>注意：stack的指针SP，一直指向栈顶。</li>
 </ul>
 <p><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/stack-machine.png" alt="stack machine"></p>
-<h3 id="2-3-local-x2F-argument-x2F-this-x2F-that-Segment-Implement"><a href="#2-3-local-x2F-argument-x2F-this-x2F-that-Segment-Implement" class="headerlink" title="2.3 local&#x2F;argument&#x2F;this&#x2F;that Segment Implement"></a>2.3 local&#x2F;argument&#x2F;this&#x2F;that Segment Implement</h3><p>这四个segment的作用和分工：</p>
+<h3 id="2-3-local-argument-this-that-Segment-Implement"><a href="#2-3-local-argument-this-that-Segment-Implement" class="headerlink" title="2.3 local&#x2F;argument&#x2F;this&#x2F;that Segment Implement"></a>2.3 local&#x2F;argument&#x2F;this&#x2F;that Segment Implement</h3><p>这四个segment的作用和分工：</p>
 <ul>
 <li>方法的本地变量或入参放在local和argument中</li>
 <li>方法可访问到的对象和数组放在this或that中；</li>
@@ -45,7 +105,7 @@
 <li>注意：跟其他的不同点，该操作的是this或that指针，而其他操作的都是指针指向地址的值</li>
 <li>pointer为什么需要：之后写编译器的时候才会解释<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81pointer.png" alt="为什么要pointer segment"><br>pointer的值只有0或1，当0的时候就是访问this，当1的时候，访问that<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/pointer-segment%E5%AE%9E%E7%8E%B0.png" alt="pointer segment实现"></li>
 </ul>
-<h3 id="2-8-Hack平台的约定-x2F-标准"><a href="#2-8-Hack平台的约定-x2F-标准" class="headerlink" title="2.8 Hack平台的约定&#x2F;标准"></a>2.8 Hack平台的约定&#x2F;标准</h3><p>这些segment在哪里，在Hack平台都是约定好的<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E6%A0%87%E5%87%86VMmapping.png" alt="Hack平台的标准VM Mapping"><br>用约定好的标识符<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E6%A0%87%E5%87%86VMmapping2.png" alt="Hack平台的标准VM Mapping的标识符"></p>
+<h3 id="2-8-Hack平台的约定-标准"><a href="#2-8-Hack平台的约定-标准" class="headerlink" title="2.8 Hack平台的约定&#x2F;标准"></a>2.8 Hack平台的约定&#x2F;标准</h3><p>这些segment在哪里，在Hack平台都是约定好的<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E6%A0%87%E5%87%86VMmapping.png" alt="Hack平台的标准VM Mapping"><br>用约定好的标识符<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/%E6%A0%87%E5%87%86VMmapping2.png" alt="Hack平台的标准VM Mapping的标识符"></p>
 <h2 id="3-VM-translator"><a href="#3-VM-translator" class="headerlink" title="3 VM translator"></a>3 <strong>VM translator</strong></h2><p>可以用python或者java等语言去写，主要架构如下：<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/translator%E6%9E%B6%E6%9E%84.png" alt="VM translator架构"><br>其中parser的主要API：<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/parser%E7%B1%BBAPI.png" alt="Parser的API"><br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/parser%E7%B1%BBAPI2.png" alt="Parser的API补充"><br>codeWriter的主要API：<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week1/codeWriter%E7%B1%BBAPI.png" alt="CodeWriter的API"></p>
 <h2 id="4-project7"><a href="#4-project7" class="headerlink" title="4. project7"></a>4. <strong>project7</strong></h2><p>code now!</p>
 <h1 id="Week2-VM-part2"><a href="#Week2-VM-part2" class="headerlink" title="Week2 VM part2"></a><strong>Week2 VM part2</strong></h1><h2 id="0-overview"><a href="#0-overview" class="headerlink" title="0. overview"></a>0. <strong>overview</strong></h2><p>涉及算术&#x2F;逻辑、内存访问已经在week1学习。接下来要学习的有以下知识：</p>
@@ -59,7 +119,7 @@
 </ul>
 <p>然后就完成了VM的实现。</p>
 <h2 id="1-branching"><a href="#1-branching" class="headerlink" title="1. branching"></a>1. <strong>branching</strong></h2><p>branching和assembly中的branch几乎一样。<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/branching.png" alt="branching"></p>
-<h2 id="2-functions-重点"><a href="#2-functions-重点" class="headerlink" title="2. functions(重点)"></a>2. <strong>functions(重点)</strong></h2><h2 id="2-1-overview-x2F-abstraction"><a href="#2-1-overview-x2F-abstraction" class="headerlink" title="2.1 overview&#x2F;abstraction"></a>2.1 overview&#x2F;abstraction</h2><p>function：在其他地方也有叫method，一个意思。<br>一个函数从高阶语言编译成vm伪代码，再到vm代码<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/function-overview.png" alt="function overview"></p>
+<h2 id="2-functions-重点"><a href="#2-functions-重点" class="headerlink" title="2. functions(重点)"></a>2. <strong>functions(重点)</strong></h2><h2 id="2-1-overview-abstraction"><a href="#2-1-overview-abstraction" class="headerlink" title="2.1 overview&#x2F;abstraction"></a>2.1 overview&#x2F;abstraction</h2><p>function：在其他地方也有叫method，一个意思。<br>一个函数从高阶语言编译成vm伪代码，再到vm代码<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/function-overview.png" alt="function overview"></p>
 <h2 id="2-2-caller-and-callee"><a href="#2-2-caller-and-callee" class="headerlink" title="2.2 caller and callee"></a>2.2 caller and callee</h2><p>左侧的main函数是caller，右侧mult函数是callee，在每个函数内，他们视角中的stack和内存segment是不同的。<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/caller-and-callee.png" alt="caller and callee"><br>抽象的说一个call命令，应该做什么；一个return命令，应该做什么<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/call-and-return.png" alt="call and return"><br>在一个函数内，也是通过stack和memory segement之间的push&#x2F;pop操作来进行计算的，那么，当caller调用了callee的时候，caller的状态必须保存下来，运行完callee后，恢复caller的状态，接着运行caller。</p>
 <h2 id="2-3-implement"><a href="#2-3-implement" class="headerlink" title="2.3 implement"></a>2.3 implement</h2><p>caller的视角<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/caller-view.png" alt="caller的视角"><br>callee的视角<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/callee-view.png" alt="callee的视角"><br>vm代码<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/vm-view.png" alt="vm代码中实现相关语句"></p>
 <h3 id="2-3-1-handling-call"><a href="#2-3-1-handling-call" class="headerlink" title="2.3.1 handling call"></a>2.3.1 handling call</h3><p><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/handling-call.png" alt="处理call语句"></p>
@@ -70,8 +130,10 @@
 <li>需要有个Main.vm文件；其中一个函数叫main</li>
 <li>电脑开启 运行Sys.init</li>
 <li>Sys.init会call Main.main，然后进入无限循环</li>
-<li>约定最开始的两条机器语言指令是：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 这两行应该卸载hack ROM中，最开始的两行</span><br><span class="line">sp=256</span><br><span class="line">Call Sys.init</span><br></pre></td></tr></table></figure></li>
+<li>约定最开始的两条机器语言指令是：</li>
 </ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 这两行应该卸载hack ROM中，最开始的两行</span><br><span class="line">sp=256</span><br><span class="line">Call Sys.init</span><br></pre></td></tr></table></figure>
+
 <p>目前为止，VM中的特殊字符一共有如下这么多：<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/vm-special-symbols.png" alt="VM中的特殊字符"></p>
 <h2 id="4-具体代码实现"><a href="#4-具体代码实现" class="headerlink" title="4.具体代码实现"></a>4.<strong>具体代码实现</strong></h2><p>还是三个模块Main、Parser和CodeWriter。其中CodeWriter需要增加一些方法，Parser需要补充一些逻辑。<br><img src="/myBlog/2022/07/10/Nand2Tetris-Part2/week2/code-writer.png" alt="CodeWriter补充方法"></p>
 <p>project8: code now!</p>
@@ -80,57 +142,48 @@
 <p>6<br>class<br>OS的目的<br>OS API 8个</p>
 <p>7<br>method fucntion constructor的区别<br>变量类型<br>expression和subroutine<br>JACK语言的特殊点</p>
 <p>8<br>jack app demo</p>
-<h1 id="Week4"><a href="#Week4" class="headerlink" title="**Week4 **"></a>**Week4 **</h1></div><div class="article-licensing box"><div class="licensing-title"><p>Nand2Tetris-Part2</p><p><a href="https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/">https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Ian Gao</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-07-10</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-11-02</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/myBlog/tags/Coursera/">Coursera</a><a class="link-muted mr-2" rel="tag" href="/myBlog/tags/Computer-Science/">Computer Science</a><a class="link-muted mr-2" rel="tag" href="/myBlog/tags/Full-Stack/">Full Stack</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/myBlog/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">计算机网络-学习笔记</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/myBlog/2022/06/18/Nand2Tetris-Part1/"><span class="level-item">Nand2Tetris Part1</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
-            this.page.url = 'https://ig505gi.github.io/myBlog/2022/07/10/Nand2Tetris-Part2/';
-            this.page.identifier = '2022/07/10/Nand2Tetris-Part2/';
-        };
-        (function() {
-            var d = document, s = d.createElement('script');  
-            s.src = '//' + '留个言吧~' + '.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/myBlog/img/avatar.png" alt="Ian Gao"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Ian Gao</p><p class="is-size-6 is-block">前端开发</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>中国/上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/myBlog/archives"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/myBlog/categories"><p class="title">2</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/myBlog/tags"><p class="title">11</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ig505gi" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ig505gi"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="豆瓣" href="https://www.douban.com/people/174677372"><i class="fab fa-dailymotion"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="知乎" href="https://www.zhihu.com/people/ni-cai-72-80"><i class="fab fa-zhihu"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">CS网课笔记</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/myBlog/categories/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/"><span class="level-start"><span class="level-item">技术书籍笔记</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-22T11:00:09.000Z">2022-08-22</time></p><p class="title"><a href="/myBlog/2022/08/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">计算机网络-学习笔记</a></p><p class="categories"><a href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/">CS网课笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-07-10T08:28:17.000Z">2022-07-10</time></p><p class="title"><a href="/myBlog/2022/07/10/Nand2Tetris-Part2/">Nand2Tetris-Part2</a></p><p class="categories"><a href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/">CS网课笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-06-18T04:05:49.000Z">2022-06-18</time></p><p class="title"><a href="/myBlog/2022/06/18/Nand2Tetris-Part1/">Nand2Tetris Part1</a></p><p class="categories"><a href="/myBlog/categories/CS%E7%BD%91%E8%AF%BE%E7%AC%94%E8%AE%B0/">CS网课笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-21T14:04:08.000Z">2022-03-21</time></p><p class="title"><a href="/myBlog/2022/03/21/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">JavaScript高级程序设计</a></p><p class="categories"><a href="/myBlog/categories/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/">技术书籍笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-21T00:47:40.000Z">2022-02-21</time></p><p class="title"><a href="/myBlog/2022/02/21/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter3-React%E6%BA%90%E7%A0%81/">深入React技术栈-Chapter3-React源码</a></p><p class="categories"><a href="/myBlog/categories/%E6%8A%80%E6%9C%AF%E4%B9%A6%E7%B1%8D%E7%AC%94%E8%AE%B0/">技术书籍笔记</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/myBlog/archives/2022/08/"><span class="level-start"><span class="level-item">八月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2022/07/"><span class="level-start"><span class="level-item">七月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2022/06/"><span class="level-start"><span class="level-item">六月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2022/03/"><span class="level-start"><span class="level-item">三月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2021/05/"><span class="level-start"><span class="level-item">五月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/myBlog/archives/2018/12/"><span class="level-start"><span class="level-item">十二月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/myBlog/tags/Backend/"><span class="tag">Backend</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Computer-Science/"><span class="tag">Computer Science</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Coursera/"><span class="tag">Coursera</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Fronted/"><span class="tag">Fronted</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Full-Stack/"><span class="tag">Full Stack</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Java/"><span class="tag">Java</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Mooc/"><span class="tag">Mooc</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/Network/"><span class="tag">Network</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/OOP/"><span class="tag">OOP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/myBlog/tags/React/"><span class="tag">React</span><span class="tag">2</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/myBlog/">IG</a><p class="is-size-7"><span>&copy; 2022 Ian Gao</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ig505gi"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
-            article: {
-                highlight: {
-                    clipboard: true,
-                    fold: 'unfolded'
-                }
-            }
-        };</script><script src="/myBlog/js/column.js"></script><script src="/myBlog/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/myBlog/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
-      window.cookieconsent.initialise({
-        type: "info",
-        theme: "edgeless",
-        static: false,
-        position: "bottom-left",
-        content: {
-          message: "此网站使用Cookie来改善您的体验。",
-          dismiss: "知道了！",
-          allow: "允许使用Cookie",
-          deny: "拒绝",
-          link: "了解更多",
-          policy: "Cookie政策",
-          href: "https://www.cookiesandyou.com/",
-        },
-        palette: {
-          popup: {
-            background: "#edeff5",
-            text: "#838391"
-          },
-          button: {
-            background: "#4b81e8"
-          },
-        },
-      });
-    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
-            if (typeof $.fn.lightGallery === 'function') {
-                $('.article').lightGallery({ selector: '.gallery-item' });
-            }
-            if (typeof $.fn.justifiedGallery === 'function') {
-                if ($('.justified-gallery > p > .gallery-item').length) {
-                    $('.justified-gallery > p > .gallery-item').unwrap();
-                }
-                $('.justified-gallery').justifiedGallery();
-            }
-        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/myBlog/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/myBlog/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
-            loadInsight({"contentUrl":"/myBlog/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
-        });</script></body></html>
+<h1 id="Week4"><a href="#Week4" class="headerlink" title="**Week4 **"></a>**Week4 **</h1>
+      </div>
+
+      <div class="article-tags">
+        <span class="tag">2022-07-10</span>
+        <span class="tag">1810 字</span>
+        
+          <span class="tag cat">学习笔记</span>
+        
+      </div>
+    </article>
+  </div>
+
+  <aside class="toc-sidebar" id="tocSidebar">
+    <div class="toc-label" id="tocLabel">目录</div>
+    <nav id="tocNav"></nav>
+  </aside>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2015–2026 Ian Gao‘s Blog</p>
+    
+      <p class="busuanzi">
+        <span id="busuanzi_container_site_pv">访问量 <span id="busuanzi_value_site_pv">-</span></span>
+        &middot;
+        <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv">-</span></span>
+      </p>
+    
+  </footer>
+
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  
+<script src="/myBlog/js/main.js"></script>
+
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</body>
+</html>
