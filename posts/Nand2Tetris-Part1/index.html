@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nand2Tetris Part1 — Ian Gao&#39;s Blog</title>
+  <meta name="description" content="Coursera 课程笔记，从与非门电路开始，逐步搭建一台完整的计算机。">
+  
+  <link rel="canonical" href="https://ig505gi.github.io/blog/posts/Nand2Tetris-Part1/">
+  <meta property="og:title" content="Nand2Tetris Part1">
+  <meta property="og:description" content="Coursera 课程笔记，从与非门电路开始，逐步搭建一台完整的计算机。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ig505gi.github.io/blog/posts/Nand2Tetris-Part1/">
+  <meta property="og:site_name" content="Ian Gao&#39;s Blog">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nand2Tetris Part1">
+  <meta name="twitter:description" content="Coursera 课程笔记，从与非门电路开始，逐步搭建一台完整的计算机。">
+  <link rel="preload" href="/blog/fonts/TsangerJinKai02.woff2" as="font" type="font/woff2" crossorigin>
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Nand2Tetris Part1",
+    "description": "Coursera 课程笔记，从与非门电路开始，逐步搭建一台完整的计算机。",
+    "url": "https://ig505gi.github.io/blog/posts/Nand2Tetris-Part1/",
+    "datePublished": "2022-06-18",
+    "dateModified": "2026-05-29",
+    "author": {
+      "@type": "Person",
+      "name": "Ian Gao"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ig505gi.github.io/blog/posts/Nand2Tetris-Part1/"
+    }
+  }
+  </script>
+  
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/blog/atom.xml" title="Ian Gao's Blog" type="application/atom+xml">
+</head>
+<body class="page-post">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/blog/" class="site-logo">Ian Gao&#39;s Blog</a>
+      <nav class="header-nav" id="headerNav">
+        <div class="header-menu" id="headerMenu">
+          <div class="cat-dropdown" id="catDropdown">
+            <button class="cat-btn" id="catBtn">
+              全部文章
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="cat-menu" id="catMenu">
+              <a href="/blog/">全部文章</a>
+              
+                <a href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+              
+            </div>
+          </div>
+          <hr class="mobile-divider">
+          
+            <a href="https://github.com/ig505gi" class="header-link" target="_blank" rel="noopener">GitHub</a>
+          
+          
+          
+            <a href="https://x.com/ig505gi" class="header-link" target="_blank" rel="noopener">X</a>
+          
+          <a href="https://ig505gi.github.io/" class="header-link">About Me</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单" aria-expanded="false" aria-controls="headerMenu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    
+<div class="article-wrap">
+  <div class="article-main">
+    <article>
+      <header class="article-header">
+        
+        
+        <h1>Nand2Tetris Part1</h1>
+        <div class="article-tags">
+          <span class="tag">2022-06-18</span>
+          <span class="tag">1403 字</span>
+          
+            <span class="tag cat">学习笔记</span>
+          
+        </div>
+      </header>
+
+      <div class="article-body">
+        <p>简介：Coursera网课笔记，从一个门电路开始，搭建一台电脑。<br>课程地址：<a target="_blank" rel="noopener" href="https://www.coursera.org/learn/build-a-computer">https://www.coursera.org/learn/build-a-computer</a><br>作业仓库：<a target="_blank" rel="noopener" href="https://github.com/ig505gi/Nand2Tetris-homework">https://github.com/ig505gi/Nand2Tetris-homework</a></p>
+<p><img src="/blog/posts/Nand2Tetris-Part1/week1/overview.png" alt="课程概览，part1为下面的硬件部分"></p>
+<span id="more"></span>
+
+<h2 id="Week1-布尔运算和逻辑门"><a href="#Week1-布尔运算和逻辑门" class="headerlink" title="Week1 布尔运算和逻辑门"></a>Week1 布尔运算和逻辑门</h2><h3 id="1-1-运算法则"><a href="#1-1-运算法则" class="headerlink" title="1.1 运算法则"></a>1.1 运算法则</h3><p><img src="/blog/posts/Nand2Tetris-Part1/week1/booleanIdentities.png" alt="布尔运算法则"></p>
+<h3 id="1-2-NAND"><a href="#1-2-NAND" class="headerlink" title="1.2 NAND"></a>1.2 NAND</h3><p>任何一个布尔函数都可以用只含有AND和NOT操作符的表达式来表示；而NAND是NOT和AND的结合，因此：<br><code>任何一个布尔函数都可以用只含有NAND操作符的表达式来表示</code><br><img src="/blog/posts/Nand2Tetris-Part1/week1/NAND.png" alt="NAND的证明"></p>
+<h3 id="1-3-XOR"><a href="#1-3-XOR" class="headerlink" title="1.3 XOR"></a>1.3 XOR</h3><p><img src="/blog/posts/Nand2Tetris-Part1/week1/XOR.png" alt="XOR真值表和门电路图"><br><img src="/blog/posts/Nand2Tetris-Part1/week1/XOR-HDL.png" alt="XOR的HDL实现"><br>ps: HDL: Hardware Design Language</p>
+<h3 id="1-4-Multiplexor和Demultiplexor"><a href="#1-4-Multiplexor和Demultiplexor" class="headerlink" title="1.4 Multiplexor和Demultiplexor"></a>1.4 Multiplexor和Demultiplexor</h3><p>HDL中的subBuses：<br><img src="/blog/posts/Nand2Tetris-Part1/week1/subBuses.png" alt="subBuses"><br>Multiplexor非常有用，可以从多条数据中选出其中的一条<br><img src="/blog/posts/Nand2Tetris-Part1/week1/Multiplexor.png" alt="Multiplexor"><br>Demultiplexor可以从一条数据中按照规律解析成多条数据<br><img src="/blog/posts/Nand2Tetris-Part1/week1/Demultiplexor.png" alt="Demultiplexor"></p>
+<h2 id="Week2-加法和算术逻辑单元ALU"><a href="#Week2-加法和算术逻辑单元ALU" class="headerlink" title="Week2 加法和算术逻辑单元ALU"></a>Week2 加法和算术逻辑单元ALU</h2><h3 id="2-1-半加器和加法器"><a href="#2-1-半加器和加法器" class="headerlink" title="2.1 半加器和加法器"></a>2.1 半加器和加法器</h3><h4 id="半加器真值表："><a href="#半加器真值表：" class="headerlink" title="半加器真值表："></a>半加器真值表：</h4><table>
+<thead>
+<tr>
+<th>输入输出</th>
+<th>a</th>
+<th>b</th>
+<th>sum</th>
+<th>carry</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>值</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>值</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>值</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>值</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h4 id="全加器真值表和接口"><a href="#全加器真值表和接口" class="headerlink" title="全加器真值表和接口"></a>全加器真值表和接口</h4><p><img src="/blog/posts/Nand2Tetris-Part1/week2/fullAdder.png" alt="全加器"></p>
+<h3 id="2-2-负数和补位"><a href="#2-2-负数和补位" class="headerlink" title="2.2 负数和补位"></a>2.2 负数和补位</h3><p>从左起第一位为0的为正数，为1的为负数，x+(-x)&#x3D;0，如果不考虑进了一位，也就是2^n<br><img src="/blog/posts/Nand2Tetris-Part1/week2/negative.png" alt="负数的计算"></p>
+<h3 id="2-3-ALU"><a href="#2-3-ALU" class="headerlink" title="2.3 ALU"></a>2.3 ALU</h3><p>CPU里的核心计算单元，该项目里设计的比较简单<br><img src="/blog/posts/Nand2Tetris-Part1/week2/ALU.png" alt="ALU概览"><br><img src="/blog/posts/Nand2Tetris-Part1/week2/ALU%E7%9C%9F%E5%80%BC%E8%A1%A8.png" alt="ALU真值表"></p>
+<h3 id="Week3-内存"><a href="#Week3-内存" class="headerlink" title="Week3 内存"></a>Week3 内存</h3><h3 id="3-1-Sequential-Logic-DFF"><a href="#3-1-Sequential-Logic-DFF" class="headerlink" title="3.1 Sequential Logic &amp; DFF"></a>3.1 Sequential Logic &amp; DFF</h3><p>序列逻辑可以在一个位置存放所有的信息(这句怎么理解？)<br><img src="/blog/posts/Nand2Tetris-Part1/week3/SequentialLogic.png" alt="Sequential Logic"><br>DFF: Data Filp Flop<br>特点：1.自己需要保存一个状态，2.该状态取决于上一个时间unit的输入<br><img src="/blog/posts/Nand2Tetris-Part1/week3/DFF.png" alt="DFF"></p>
+<h3 id="3-2-Register寄存器"><a href="#3-2-Register寄存器" class="headerlink" title="3.2 Register寄存器"></a>3.2 Register寄存器</h3><h4 id="1-Bit-Register"><a href="#1-Bit-Register" class="headerlink" title="1-Bit Register"></a>1-Bit Register</h4><p>内部用一个DFF和一个Mux可以实现。<br><img src="/blog/posts/Nand2Tetris-Part1/week3/1-bitRegister.png" alt="1-Bit Register"><br>16个1-Bit Register组合在一起成为一个16位寄存器</p>
+<h3 id="3-3-RAM"><a href="#3-3-RAM" class="headerlink" title="3.3 RAM"></a>3.3 RAM</h3><p>Register堆在一起组成RAM，图中的小三角代表是一个Sequential chip<br><img src="/blog/posts/Nand2Tetris-Part1/week3/RAM.png" alt="RAM"><br>读：设置address为i就好<br>写：设置address为i，in为v，load为1</p>
+<h4 id="RAM16K"><a href="#RAM16K" class="headerlink" title="RAM16K"></a>RAM16K</h4><p>我们的电脑内存是16K的，如何用HDL来写？<br>首先实现RAM8.png，tips:<br><img src="/blog/posts/Nand2Tetris-Part1/week3/RAM8.png" alt="RAM8实现tips"><br>8个16bit-Register组成RAM8,8个RAM8组成RAM64。。。。。<br><img src="/blog/posts/Nand2Tetris-Part1/week3/RAM16K.png" alt="RAM16K实现"></p>
+<h3 id="3-4-Counter"><a href="#3-4-Counter" class="headerlink" title="3.4 Counter"></a>3.4 Counter</h3><p>计数器，内部用DFF实现，每过一个时间单位，能自动加一<br><img src="/blog/posts/Nand2Tetris-Part1/week3/Counter.png" alt="Counter"></p>
+<h2 id="Week4-机器语言"><a href="#Week4-机器语言" class="headerlink" title="Week4 机器语言"></a>Week4 机器语言</h2><h3 id="4-1-Machine-Language-Overview"><a href="#4-1-Machine-Language-Overview" class="headerlink" title="4.1 Machine Language Overview"></a>4.1 Machine Language Overview</h3><p>一门机器语言应该有哪些成分？操作符，逻辑运算，流程控制，寻址功能，IO。</p>
+<ul>
+<li>如果硬件复杂，可以实现乘除法，机器语言可以包含乘除法，如果硬件简单，可以只有加法；</li>
+<li>同样，如果硬件复杂，可以设计负数，浮点型数据类型。如果硬件简单，只有正数</li>
+</ul>
+<p>ps: 这里强调tradeoff，一些功能到底设计在硬件层面还是软件层面，由设计者决定。</p>
+<h3 id="4-2-Hack-Computer"><a href="#4-2-Hack-Computer" class="headerlink" title="4.2 Hack Computer"></a>4.2 Hack Computer</h3><p>Hack电脑认识的机器语言叫Hack语言，由两位教授设计的。</p>
+<h4 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h4><p><img src="/blog/posts/Nand2Tetris-Part1/week4/Hardware.png" alt="Hack电脑的硬件部分"></p>
+<h4 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h4><p><img src="/blog/posts/Nand2Tetris-Part1/week4/Software.png" alt="Hack电脑的软件部分"></p>
+<h4 id="控制和寄存器"><a href="#控制和寄存器" class="headerlink" title="控制和寄存器"></a>控制和寄存器</h4><ul>
+<li>ROM中加载了Hack语言</li>
+<li>reset按钮一按，程序开始执行</li>
+</ul>
+<p>三个寄存器用来实现Hack语言：A M D，目前先不用管CPU里如何设计，第五章会讲<br><img src="/blog/posts/Nand2Tetris-Part1/week4/registers.png" alt="Hack电脑中的Register"></p>
+<h3 id="4-3-Hack-Language"><a href="#4-3-Hack-Language" class="headerlink" title="4.3 Hack Language"></a>4.3 Hack Language</h3><p>汇编语言时人能看懂的语言，转化成二进制才是机器认识的机器语言<br>Hack语言含有A命令和C命令</p>
+<h4 id="A命令"><a href="#A命令" class="headerlink" title="A命令"></a>A命令</h4><p><img src="/blog/posts/Nand2Tetris-Part1/week4/A1.png" alt="A命令定义"><br><img src="/blog/posts/Nand2Tetris-Part1/week4/A2.png" alt="A命令转化二进制"></p>
+<h4 id="C命令"><a href="#C命令" class="headerlink" title="C命令"></a>C命令</h4><p><img src="/blog/posts/Nand2Tetris-Part1/week4/C1.png" alt="C命令定义"><br><img src="/blog/posts/Nand2Tetris-Part1/week4/C2.png" alt="C命令转化二进制"></p>
+<h3 id="4-3-IO"><a href="#4-3-IO" class="headerlink" title="4.3 IO"></a>4.3 IO</h3><h4 id="屏幕"><a href="#屏幕" class="headerlink" title="屏幕"></a>屏幕</h4><p>RAM中有一块专门管屏幕的内存screen memory map，hack电脑用512X256像素的黑白屏<br><img src="/blog/posts/Nand2Tetris-Part1/week4/Screen.png" alt="屏幕和RAM"></p>
+<h3 id="键盘"><a href="#键盘" class="headerlink" title="键盘"></a>键盘</h3><p>RAM中有一个16bit-Register管键盘<br><img src="/blog/posts/Nand2Tetris-Part1/week4/KBD.png" alt="键盘和RAM"><br><img src="/blog/posts/Nand2Tetris-Part1/week4/KBD-character-set.png" alt="键盘上的键对应的code"></p>
+<h3 id="4-4-Hack-program"><a href="#4-4-Hack-program" class="headerlink" title="4.4 Hack program"></a>4.4 Hack program</h3><p>如果程序不终止，有人在ROM后面写入了恶意命令，就会被执行。<br>如何终止程序：写一个无限循环即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// line 6</span><br><span class="line">@6</span><br><span class="line">0;JMP</span><br></pre></td></tr></table></figure>
+<h4 id="内置标识符"><a href="#内置标识符" class="headerlink" title="内置标识符"></a>内置标识符</h4><p>为了方便编程，内置了一些标识符<br><img src="/blog/posts/Nand2Tetris-Part1/week4/builtInSymbols.png" alt="内置标识符"></p>
+<h4 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h4><p>使语言更具有可读性，一般为大写字母<br><img src="/blog/posts/Nand2Tetris-Part1/week4/Branch.png" alt="分支"></p>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>也是更具有可读性，不用在其他地方声明，一般为小写字母，而分支需要在其他地方声明<br><img src="/blog/posts/Nand2Tetris-Part1/week4/Variable.png" alt="变量"></p>
+<h4 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h4><p>用以上功能实现迭代的功能<br><img src="/blog/posts/Nand2Tetris-Part1/week4/Iteration.png" alt="迭代"></p>
+<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><p>A寄存器实际上就是一个指针的功能<br><img src="/blog/posts/Nand2Tetris-Part1/week4/Points.png" alt="指针"></p>
+<h2 id="Week5-电脑架构"><a href="#Week5-电脑架构" class="headerlink" title="Week5 电脑架构"></a>Week5 电脑架构</h2><h3 id="5-1-整体架构图"><a href="#5-1-整体架构图" class="headerlink" title="5.1 整体架构图"></a>5.1 整体架构图</h3><p><img src="/blog/posts/Nand2Tetris-Part1/week5/%E6%9E%B6%E6%9E%84%E5%9B%BE1.png" alt="架构图"><br><img src="/blog/posts/Nand2Tetris-Part1/week5/%E6%9E%B6%E6%9E%84%E5%9B%BE2.png" alt="架构图细节"></p>
+<h3 id="5-2-CPU内部具体实现"><a href="#5-2-CPU内部具体实现" class="headerlink" title="5.2 CPU内部具体实现"></a>5.2 CPU内部具体实现</h3><p>非常优雅，值得细品<br><img src="/blog/posts/Nand2Tetris-Part1/week5/CPU%E5%AE%9E%E7%8E%B0.png" alt="CPU实现"></p>
+<h2 id="Week6-汇编器Assembler"><a href="#Week6-汇编器Assembler" class="headerlink" title="Week6 汇编器Assembler"></a>Week6 汇编器Assembler</h2><p>用汇编器将汇编语言变成机器语言，可以用高等语言去写，前提是有其他电脑被造出来了。<br>如果没有电脑，只能手工去费时费力的去转化。</p>
+<p>汇编器的架构：<br><img src="/blog/posts/Nand2Tetris-Part1/week6/Assembler.png" alt="汇编器架构"></p>
+
+      </div>
+    </article>
+  </div>
+
+  <aside class="toc-sidebar" id="tocSidebar">
+    <div class="toc-label" id="tocLabel">目录</div>
+    <nav id="tocNav"></nav>
+  </aside>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Ian Gao&#39;s Blog</p>
+  </footer>
+
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  
+<script src="/blog/js/main.js"></script>
+
+  
+    <div class="busuanzi-hidden" aria-hidden="true">
+      <span id="busuanzi_container_site_pv">访问量 <span id="busuanzi_value_site_pv">-</span></span>
+      <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv">-</span></span>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</body>
+</html>

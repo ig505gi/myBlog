@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>计算机网络-学习笔记 — Ian Gao&#39;s Blog</title>
+  <meta name="description" content="计算机网络基础课程笔记，涵盖 Internet 分层架构、TCP/IP 协议栈等核心概念。">
+  
+  <link rel="canonical" href="https://ig505gi.github.io/blog/posts/计算机网络-学习笔记/">
+  <meta property="og:title" content="计算机网络-学习笔记">
+  <meta property="og:description" content="计算机网络基础课程笔记，涵盖 Internet 分层架构、TCP/IP 协议栈等核心概念。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ig505gi.github.io/blog/posts/计算机网络-学习笔记/">
+  <meta property="og:site_name" content="Ian Gao&#39;s Blog">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="计算机网络-学习笔记">
+  <meta name="twitter:description" content="计算机网络基础课程笔记，涵盖 Internet 分层架构、TCP/IP 协议栈等核心概念。">
+  <link rel="preload" href="/blog/fonts/TsangerJinKai02.woff2" as="font" type="font/woff2" crossorigin>
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "计算机网络-学习笔记",
+    "description": "计算机网络基础课程笔记，涵盖 Internet 分层架构、TCP/IP 协议栈等核心概念。",
+    "url": "https://ig505gi.github.io/blog/posts/计算机网络-学习笔记/",
+    "datePublished": "2022-08-22",
+    "dateModified": "2026-05-29",
+    "author": {
+      "@type": "Person",
+      "name": "Ian Gao"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ig505gi.github.io/blog/posts/计算机网络-学习笔记/"
+    }
+  }
+  </script>
+  
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/blog/atom.xml" title="Ian Gao's Blog" type="application/atom+xml">
+</head>
+<body class="page-post">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/blog/" class="site-logo">Ian Gao&#39;s Blog</a>
+      <nav class="header-nav" id="headerNav">
+        <div class="header-menu" id="headerMenu">
+          <div class="cat-dropdown" id="catDropdown">
+            <button class="cat-btn" id="catBtn">
+              全部文章
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="cat-menu" id="catMenu">
+              <a href="/blog/">全部文章</a>
+              
+                <a href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+              
+            </div>
+          </div>
+          <hr class="mobile-divider">
+          
+            <a href="https://github.com/ig505gi" class="header-link" target="_blank" rel="noopener">GitHub</a>
+          
+          
+          
+            <a href="https://x.com/ig505gi" class="header-link" target="_blank" rel="noopener">X</a>
+          
+          <a href="https://ig505gi.github.io/" class="header-link">About Me</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单" aria-expanded="false" aria-controls="headerMenu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    
+<div class="article-wrap">
+  <div class="article-main">
+    <article>
+      <header class="article-header">
+        
+        
+        <h1>计算机网络-学习笔记</h1>
+        <div class="article-tags">
+          <span class="tag">2022-08-22</span>
+          <span class="tag">1658 字</span>
+          
+            <span class="tag cat">学习笔记</span>
+          
+        </div>
+      </header>
+
+      <div class="article-body">
+        <h1 id="Chapter1-整体认知"><a href="#Chapter1-整体认知" class="headerlink" title="Chapter1 整体认知"></a>Chapter1 整体认知</h1><h2 id="1-1-Internet"><a href="#1-1-Internet" class="headerlink" title="1.1 Internet"></a>1.1 Internet</h2><h2 id="1-1-1-分层"><a href="#1-1-1-分层" class="headerlink" title="1.1.1 分层"></a>1.1.1 分层</h2><p>应用层<br>传输层<br>网络层<br>数据链路层<br>物理层</p>
+<span id="more"></span>
+<h2 id="1-1-2-计算机网络"><a href="#1-1-2-计算机网络" class="headerlink" title="1.1.2 计算机网络"></a>1.1.2 计算机网络</h2><p>路由器是工作在网络层的，交换机是工作在链路层的</p>
+<p>网络节点有：1.路由器或交换机等交换设备 2.主机及其运行的程序<br>P2P(Point to Point) 是网络中的一个交换设备到另一个交换设备<br>E2E(End to End) 是网络中每一个终端(PC&#x2F;手机&#x2F;Server等)到另一个终端</p>
+<p>point在计算机网络中用<code>圆圈</code>表示，End用<code>方块</code>表示</p>
+<p>接入链路：终端接入的<br>主干链路：路由器等的链路</p>
+<h2 id="1-1-3-协议"><a href="#1-1-3-协议" class="headerlink" title="1.1.3 协议"></a>1.1.3 协议</h2><p>PDU 协议数据单元<br>在不同的层名字不同，在应用层叫message，在传输层叫segment</p>
+<h2 id="从服务角度看计算机网络"><a href="#从服务角度看计算机网络" class="headerlink" title="从服务角度看计算机网络"></a>从服务角度看计算机网络</h2><p>使用通信设施进行通信的分布式应用<br>由两部分，一部分是应用进程，只认识其他的应用进程。<br>第二部分是基础设施，在应用之下以及负责传输的所有基础设施。</p>
+<p>通信基础设施为apps提供编程接口</p>
+<h2 id="1-2-网络边缘"><a href="#1-2-网络边缘" class="headerlink" title="1.2 网络边缘"></a>1.2 网络边缘</h2><p>边缘、核心和接入，三大块<br>上一节中End就是边缘edge，Point是核心core，把pc等边缘设备接入整个网络核心，叫接入access</p>
+<p>【待整理】<br>CS模式<br>P2P模式 peer2peer<br>面向链接<br>有链接</p>
+<p>tcp<br>可靠<br>流量控制<br>拥塞控制</p>
+<h2 id="1-3-网络核心"><a href="#1-3-网络核心" class="headerlink" title="1.3 网络核心"></a>1.3 网络核心</h2><ul>
+<li><p>电路交换，适合电话，不适合计算机<br>建立连接时间长<br>独享线路，每个线路的带宽分成piece(片)，频分，时分，波分<br>容易浪费资源</p>
+</li>
+<li><p>分组交换<br>带宽不分片，全用<br>在每个节点都会存储，然后转发<br>每一跳，需要存储时间，排队时间</p>
+</li>
+</ul>
+<p>问题：排队延迟和丢失，就是常说的丢包</p>
+<p>关键功能：路由和核心</p>
+<p>统计多路复用</p>
+<p>分组交换分类：<br>数据报网络：无连接，每个数据包都有主机的完整信息<br>虚电路网络：每个交换节点要维持链接状态</p>
+<p>接入<br>共享网络</p>
+<p>住宅接入 modem 调制解调器<br>利用已有的电话线<br>线缆接入<br>无线接入</p>
+<p>互联网结构，网络的网络 ISP<br>全局的ISP，<br>ICP 会自己建立数据中心，接入就近的ISP</p>
+<p>节点处理延时，微秒级别<br>排队延时，取决于拥塞程度<br>传输延时：从节点把比特发出到链路上的延时，微秒到毫秒级别<br>传播延时：物理传播延时，几微秒到几百毫秒</p>
+<p>ICMP</p>
+<p>SAP 服务访问点</p>
+<p>DU 数据单元</p>
+<h1 id="Chapter2-应用层"><a href="#Chapter2-应用层" class="headerlink" title="Chapter2 应用层"></a>Chapter2 应用层</h1><h2 id="2-1-应用层原理"><a href="#2-1-应用层原理" class="headerlink" title="2.1 应用层原理"></a>2.1 应用层原理</h2><p>模式：C&#x2F;S模式，p2p模式，混合模式</p>
+<ul>
+<li>C&#x2F;S模式：不平等、资源在服务器、性能断崖式下降、可扩展性差</li>
+<li>p2p: 平等、性能平滑、管理困难</li>
+</ul>
+<p>原理：</p>
+<ol>
+<li>标识、寻址<br>必须要有唯一的标识符，有ip地址和端口号，才能找到进行进程间的通信</li>
+<li>传输层的服务<br>UDP和TCP，必须每次都要带上源ip，源port和目标ip，目标port。<br>因此socket API解决这个麻烦：用TCP socket时，返回一个整型，代表以上四个信息的四元组；应用层的应用再进行通信时，只用这个整型即可。<br>目的：1.便于管理 2.使穿过层间的信息量最少</li>
+</ol>
+<p>UDP socket：只保存源ip和源port，二元组</p>
+<p>TCP和UDP都不加密，都不安全</p>
+<ol start="3">
+<li>定义自己的协议<br>报文类型、语法、语义、规则</li>
+</ol>
+<p>传输层提供的服务：</p>
+<ul>
+<li>数据丢失率</li>
+<li>延迟</li>
+<li>吞吐量</li>
+<li>安全性</li>
+</ul>
+<p>例子：SSL：应用层协议，利用TCP，加密的协议；如https就是跑在SSL之上</p>
+<h2 id="2-2-web和http"><a href="#2-2-web和http" class="headerlink" title="2.2 web和http"></a>2.2 web和http</h2><h3 id="1-请求格式："><a href="#1-请求格式：" class="headerlink" title="1. 请求格式："></a>1. 请求格式：</h3><p>prot:&#x2F;&#x2F;user:<a href="mailto:&#x70;&#115;&#x77;&#x40;&#119;&#119;&#x77;&#46;&#115;&#111;&#x6d;&#x65;&#83;&#99;&#104;&#x6f;&#111;&#x6c;&#46;&#x65;&#100;&#x75;">psw@www.someSchool.edu</a>&#x2F;someDept&#x2F;pic.gif:port<br>[协议]:&#x2F;&#x2F;[用户口令]@[主机名]&#x2F;[路径名]:[端口]</p>
+<h3 id="2-基本原理"><a href="#2-基本原理" class="headerlink" title="2. 基本原理"></a>2. 基本原理</h3><ul>
+<li>基于TCP，TCP向上层提供字节流的服务，http协议需要自己维护报文与报文之间的界限<br>举个例子：客户端的http给下层的tcp传输了两个15k的包；在服务端，tcp传输给了http一个30k的包，http协议需要自己分成两个15k。</li>
+<li>一开始需要基于TCP建立连接，默认端口80</li>
+<li>http是无状态的</li>
+<li>RTT：往返时间。一个小分组从客户端到服务器，在回来的时间。</li>
+</ul>
+<h3 id="3-1-0和1-1的区别"><a href="#3-1-0和1-1的区别" class="headerlink" title="3. 1.0和1.1的区别"></a>3. 1.0和1.1的区别</h3><ul>
+<li>http1.0:非持久，每次传输一个对象，HTTP关闭TCP连接，因此每传输一个对象都要2个RTT。</li>
+<li>http1.1:持久，连接不关;有流水和非流水型的。</li>
+</ul>
+<h3 id="4-报文"><a href="#4-报文" class="headerlink" title="4. 报文"></a>4. 报文</h3><p>编码是ASCII</p>
+<ul>
+<li>请求 GET&#x2F;POST&#x2F;HEAD PUT&#x2F;DELETE(网络管理员使用)</li>
+<li>响应 响应码</li>
+</ul>
+<h3 id="5-cookie"><a href="#5-cookie" class="headerlink" title="5.cookie"></a>5.cookie</h3><p>保存在客户端，有过期时间（已经理解，不解释了）</p>
+<h3 id="6-web缓存"><a href="#6-web缓存" class="headerlink" title="6. web缓存"></a>6. web缓存</h3><ul>
+<li>可以通过局域网建立缓存服务器，通常由ISP安装</li>
+<li>优点：客户会快，而且减少用户访问远程服务器的压力</li>
+<li>大家搜索的东西需要有趋同性，这样更容易命中缓存</li>
+</ul>
+<h2 id="2-3-FTP"><a href="#2-3-FTP" class="headerlink" title="2.3 FTP"></a>2.3 FTP</h2><ul>
+<li>文件传输协议</li>
+<li>ftp服务器知名端口：21</li>
+<li>控制连接：客户端请求服务器21号端口，身份确认，请求控制连接浏览远程目录，请求下载某个文件</li>
+<li>数据连接：服务端请求客户端的20号端口，发送数据</li>
+</ul>
+<h2 id="2-4-Email"><a href="#2-4-Email" class="headerlink" title="2.4 Email"></a>2.4 Email</h2><h3 id="3个主要组成部分"><a href="#3个主要组成部分" class="headerlink" title="3个主要组成部分"></a>3个主要组成部分</h3><ul>
+<li>用户代理：邮件是从发送服务器到目标服务器，所以用户操作是代理</li>
+<li>邮件服务器</li>
+<li>简单邮件传输协议： SMTP</li>
+</ul>
+<h3 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h3><ul>
+<li>使用TCP，端口25</li>
+<li>从发送方服务器到接收方服务器</li>
+<li>握手，传输报文，关闭</li>
+<li>命令：ASCII文本；响应：状态码和状态信息</li>
+<li>报文必须是7位ASCII码</li>
+<li>邮件中有多个对象，附件等；http只有一个</li>
+<li>内容必须是ASCII码，怎么编码中文等？<br>报文首部声明MIME，多媒体编码。比如base64</li>
+</ul>
+<h3 id="拉取协议"><a href="#拉取协议" class="headerlink" title="拉取协议"></a>拉取协议</h3><ul>
+<li>POP3：邮局访问协议</li>
+<li>IMAP: Internet邮件访问协议，比POP3更复杂</li>
+<li>HTTP： hotmail等</li>
+</ul>
+
+      </div>
+    </article>
+  </div>
+
+  <aside class="toc-sidebar" id="tocSidebar">
+    <div class="toc-label" id="tocLabel">目录</div>
+    <nav id="tocNav"></nav>
+  </aside>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Ian Gao&#39;s Blog</p>
+  </footer>
+
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  
+<script src="/blog/js/main.js"></script>
+
+  
+    <div class="busuanzi-hidden" aria-hidden="true">
+      <span id="busuanzi_container_site_pv">访问量 <span id="busuanzi_value_site_pv">-</span></span>
+      <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv">-</span></span>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</body>
+</html>

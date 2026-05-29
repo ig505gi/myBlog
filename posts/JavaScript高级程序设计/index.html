@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript高级程序设计 — Ian Gao&#39;s Blog</title>
+  <meta name="description" content="《JavaScript 高级程序设计》读书笔记，涵盖 JS 基础、DOM、BOM、事件、Ajax 等核心内容。">
+  
+  <link rel="canonical" href="https://ig505gi.github.io/blog/posts/JavaScript高级程序设计/">
+  <meta property="og:title" content="JavaScript高级程序设计">
+  <meta property="og:description" content="《JavaScript 高级程序设计》读书笔记，涵盖 JS 基础、DOM、BOM、事件、Ajax 等核心内容。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ig505gi.github.io/blog/posts/JavaScript高级程序设计/">
+  <meta property="og:site_name" content="Ian Gao&#39;s Blog">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JavaScript高级程序设计">
+  <meta name="twitter:description" content="《JavaScript 高级程序设计》读书笔记，涵盖 JS 基础、DOM、BOM、事件、Ajax 等核心内容。">
+  <link rel="preload" href="/blog/fonts/TsangerJinKai02.woff2" as="font" type="font/woff2" crossorigin>
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "JavaScript高级程序设计",
+    "description": "《JavaScript 高级程序设计》读书笔记，涵盖 JS 基础、DOM、BOM、事件、Ajax 等核心内容。",
+    "url": "https://ig505gi.github.io/blog/posts/JavaScript高级程序设计/",
+    "datePublished": "2022-03-21",
+    "dateModified": "2026-05-29",
+    "author": {
+      "@type": "Person",
+      "name": "Ian Gao"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ig505gi.github.io/blog/posts/JavaScript高级程序设计/"
+    }
+  }
+  </script>
+  
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/blog/atom.xml" title="Ian Gao's Blog" type="application/atom+xml">
+</head>
+<body class="page-post">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/blog/" class="site-logo">Ian Gao&#39;s Blog</a>
+      <nav class="header-nav" id="headerNav">
+        <div class="header-menu" id="headerMenu">
+          <div class="cat-dropdown" id="catDropdown">
+            <button class="cat-btn" id="catBtn">
+              全部文章
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="cat-menu" id="catMenu">
+              <a href="/blog/">全部文章</a>
+              
+                <a href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+              
+            </div>
+          </div>
+          <hr class="mobile-divider">
+          
+            <a href="https://github.com/ig505gi" class="header-link" target="_blank" rel="noopener">GitHub</a>
+          
+          
+          
+            <a href="https://x.com/ig505gi" class="header-link" target="_blank" rel="noopener">X</a>
+          
+          <a href="https://ig505gi.github.io/" class="header-link">About Me</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单" aria-expanded="false" aria-controls="headerMenu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    
+<div class="article-wrap">
+  <div class="article-main">
+    <article>
+      <header class="article-header">
+        
+        
+        <h1>JavaScript高级程序设计</h1>
+        <div class="article-tags">
+          <span class="tag">2022-03-21</span>
+          <span class="tag">2264 字</span>
+          
+            <span class="tag cat">学习笔记</span>
+          
+        </div>
+      </header>
+
+      <div class="article-body">
+        <h2 id="Chapter-1-7-JS的基础知识"><a href="#Chapter-1-7-JS的基础知识" class="headerlink" title="Chapter 1-7 JS的基础知识"></a>Chapter 1-7 JS的基础知识</h2><h3 id="1-JS的历史"><a href="#1-JS的历史" class="headerlink" title="1 JS的历史"></a>1 JS的历史</h3><ul>
+<li>JS包括ECMA、DOM、BOM<br>…</li>
+</ul>
+<h3 id="2-HTML"><a href="#2-HTML" class="headerlink" title="2 HTML"></a>2 HTML</h3><ul>
+<li>HTML的发展，HTML中如何用JS<br>…</li>
+</ul>
+<span id="more"></span>
+<h3 id="3-语法"><a href="#3-语法" class="headerlink" title="3 语法"></a>3 语法</h3><ul>
+<li>Number类型的上下限<br>…</li>
+</ul>
+<h3 id="4-变量、作用域"><a href="#4-变量、作用域" class="headerlink" title="4 变量、作用域"></a>4 变量、作用域</h3><ul>
+<li>执行环境是什么，「没有块级作用域」</li>
+<li>垃圾回收、接触引用</li>
+</ul>
+<h3 id="5-引用类型"><a href="#5-引用类型" class="headerlink" title="5 引用类型"></a>5 引用类型</h3><h3 id="6-面向对象"><a href="#6-面向对象" class="headerlink" title="6 面向对象"></a>6 面向对象</h3><ul>
+<li>设计模式：工厂模式、继承模式</li>
+<li>原型链</li>
+</ul>
+<h3 id="7-私有变量"><a href="#7-私有变量" class="headerlink" title="7 私有变量"></a>7 私有变量</h3><ul>
+<li>闭包</li>
+<li>模仿块级作用域</li>
+<li>模块模式 &amp; 单例模式</li>
+</ul>
+<h2 id="Chapter-8-BOM"><a href="#Chapter-8-BOM" class="headerlink" title="Chapter 8 BOM"></a>Chapter 8 BOM</h2><h3 id="1-window对象"><a href="#1-window对象" class="headerlink" title="1 window对象"></a>1 window对象</h3><ul>
+<li>frame框架，每一层都有个window对象，top指向最高层级的window</li>
+<li>窗口位置</li>
+<li>窗口大小</li>
+<li>导航和打开窗口</li>
+<li>间歇调用和超时调用(setTimeout&#x2F;setInterval)</li>
+<li>系统对话框(alert&#x2F;prompt&#x2F;confirm&#x2F;print&#x2F;find)</li>
+</ul>
+<h3 id="2-location对象"><a href="#2-location对象" class="headerlink" title="2 location对象"></a>2 location对象</h3><ul>
+<li>既是windows的对象，又是document的对象</li>
+<li>location的属性：<br><img src="/blog/posts/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/location%E5%B1%9E%E6%80%A7.png" alt="location属性"></li>
+<li>每次修改location的属性(hash除外)页面都会以新url重新加载</li>
+<li>replace方法不能生成历史记录，也不能返回刚刚的网页</li>
+</ul>
+<h3 id="3-navigator对象"><a href="#3-navigator对象" class="headerlink" title="3 navigator对象"></a>3 navigator对象</h3><ul>
+<li>有属性浏览器版本信息、名称、插件、环境等</li>
+<li>注册处理程序<code>registerContentHandler()</code>和<code>registerProtocolHandler()</code>方法，跟RSS和在线电子邮件有关</li>
+</ul>
+<h3 id="4-screen对象"><a href="#4-screen对象" class="headerlink" title="4 screen对象"></a>4 screen对象</h3><p>能够拿到一些屏幕的硬件信息：PPI、像素、刷新率等，对于编程意义不大</p>
+<h3 id="5-history对象"><a href="#5-history对象" class="headerlink" title="5 history对象"></a>5 history对象</h3><p>安全的：开发者是不能知道用户访问过那些网页的<br>方法：go&#x2F;back&#x2F;forward</p>
+<h2 id="Chapter-10-12-DOM"><a href="#Chapter-10-12-DOM" class="headerlink" title="Chapter 10-12 DOM"></a>Chapter 10-12 DOM</h2><p>DOM（文档对象类型）是针对HTML和XML文档的一个API。<br>DOM 可以将任何HTML或XML文档描绘成一个由多层节点构成的结构。节点分为几种不同的类型。如下多种：</p>
+<h3 id="1-节点层次"><a href="#1-节点层次" class="headerlink" title="1 节点层次"></a>1 节点层次</h3><h4 id="1-1-Node类型"><a href="#1-1-Node类型" class="headerlink" title="1.1 Node类型"></a>1.1 Node类型</h4><ul>
+<li>其它节点都继承自Node类型，每个节点都有一个<code>nodeType</code>的属性，记录了其类型</li>
+<li>每个节点都有这样或那样的关系。每个节点都有一个<code>childNodes</code>属性，其中保存着一个<code>NodeList</code>对象</li>
+<li>每个节点都有一个<code>parentNode</code>属性，该属性指向文档树中的父节点<br><img src="/blog/posts/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/Node%E7%B1%BB%E5%9E%8B%E6%9F%A5%E8%AF%A2%E5%B1%9E%E6%80%A7.png" alt="Node类型查询属性"></li>
+<li>常用方法<code>appendChild()</code>。用于向<code>childNodes</code>列表的末尾添加一个节点。</li>
+<li>常用方法<code>insertBefore()</code>。这个方法接受两个参数:要插入的节点和作为参照的节点。</li>
+<li>常用方法<code>replaceChild()</code>。这个方法接受两个参数:要插入的节点和要替换的节点。</li>
+<li>其他方法<code>cloneNode()</code>可以深浅复制；<code>normalize()</code>处理文档树中的文本节点。</li>
+</ul>
+<h4 id="1-2-Document类型"><a href="#1-2-Document类型" class="headerlink" title="1.2 Document类型"></a>1.2 Document类型</h4><ul>
+<li>document对象是HTMLDocument(继承自Document类型)的一个实例，表示整个HTML页面。</li>
+<li>document对象是Window对象的一个属性，可以将其作为全局属性访问。</li>
+<li>document对象的属性<code>nodeType</code>值为9。</li>
+<li>document对象的属性<code>documentElement</code>、<code>firstChild</code>和<code>childNodes[0]</code>的值相同，都指向&lt;html&gt;元素。</li>
+<li>document作为HTMLDocument实例，有一些不同于Document类型的属性：<code>title</code>、<code>URL</code>、<code>domain</code>、<code>referrer</code>。其中title和domain是可以设置的，domain只能修改三级域名(www)</li>
+<li>Document类型都有的方法：<code>getElementById()</code>和<code>getElementsByTagName()</code>;HTMLDocument类型独有的方法是<code>getElementsByName()</code>。</li>
+<li>document有一些集合可以方便拿到一些HTMLCollection：<code>document.links</code>拿到所有带href的&lt;a&gt;元素、<code>document.forms</code>拿到所有&lt;form&gt;元素、<code>document.images</code>拿到所有&lt;img&gt;元素</li>
+<li><code>document.implementation.hasFeature(&quot;XML&quot;, &quot;1.0&quot;)</code> 可以检测DOM的功能及版本号</li>
+<li>document对象具有输出流写入网页的功能：<code>write()</code>、<code>writeln()</code>、<code>open()</code>、<code>close()</code></li>
+</ul>
+<h4 id="1-3-Element类型"><a href="#1-3-Element类型" class="headerlink" title="1.3 Element类型"></a>1.3 Element类型</h4><ul>
+<li>所有的HTML元素都是HTMLElement类型，其继承自Element类型，添加了一些Element没有的属性：id、titile、className等；可以直接像这样<code>div.id</code><strong>通过属性访问</strong>对其属性赋值和取值</li>
+<li><code>getAttribute()</code>、<code>setAttribute()</code>、<code>removeAttribute()</code>是三个常用的方法</li>
+<li>H5规范规定，自定义特性需要有<code>data-</code>前缀；<strong>通过getAttribute方法</strong>可以拿到自定义特性的值；除了IE可以直接用<code>div.myAttr</code>这样<strong>通过属性访问</strong>拿到特性的值，其他浏览器都<strong>不可以</strong></li>
+<li>style属性：<strong>通过getAttribute方法</strong>拿到的是CSS文本，<strong>通过属性访问</strong>拿到的是对象</li>
+<li>onClick属性：<strong>通过getAttribute方法</strong>拿到的是响应代码的字符串，<strong>通过属性访问</strong>拿到的是JS函数</li>
+<li>通过setAttribute()方法设置的特性，统一会变成小写</li>
+<li>想要遍历元素的特性，可以使用attributes属性<code>element.attributes</code></li>
+<li><code>var div = document.createElement(&quot;div&quot;);</code></li>
+</ul>
+<h4 id="1-4-Text类型"><a href="#1-4-Text类型" class="headerlink" title="1.4 Text类型"></a>1.4 Text类型</h4><ul>
+<li>文本节点，parentNode是一个Element类型；通过<code>nodeValue</code>属性或<code>data</code>属性访问文本内容，是一致的</li>
+<li>常用方法：<code>appendData()</code> <code>deleteData()</code> <code>insertData()</code> <code>replaceData()</code> <code>splitText()</code> <code>substringData()</code></li>
+<li><code>div.firstChild.nodeValue = &#39;aa&lt;s&gt;&#39;;</code> 输出的结果是转义过的，是<code>aa&amp;lt;s&amp;gt;</code></li>
+<li><code>document.createTextNode()</code>创建新文本节点，但是如果不指定其父元素，在页面上是看不到的；</li>
+</ul>
+<h4 id="1-5-1-9-其它类型"><a href="#1-5-1-9-其它类型" class="headerlink" title="1.5-1.9 其它类型"></a>1.5-1.9 其它类型</h4><ul>
+<li>Comment类型：parentNode可能是Document或Element类型；有除了splitText以外的Text类型的全部方法</li>
+<li>CDATASection：类型只针对基于XML的文档</li>
+<li>DocumentType类型：在Web浏览器中并不常用，仅有 Firefox、Safari 和 Opera 支持它</li>
+<li>DocumentFragment类型：只有它在文档中没有对应的标记，可以当做一个仓库。比如如果向文档中渲染三个连续的元素，先放到仓库里，可以避免重复渲染三次</li>
+<li>Attr类型：不是DOM文档树的一部分，是元素的特性</li>
+</ul>
+<h3 id="2-DOM扩展"><a href="#2-DOM扩展" class="headerlink" title="2 DOM扩展"></a>2 DOM扩展</h3><h4 id="2-1-选择符API"><a href="#2-1-选择符API" class="headerlink" title="2.1 选择符API"></a>2.1 选择符API</h4><ul>
+<li>querySelector()</li>
+<li>querySelectorAll()</li>
+<li>msMatchesSelector()</li>
+</ul>
+<p>…</p>
+<h3 id="3-DOM2和DOM3"><a href="#3-DOM2和DOM3" class="headerlink" title="3 DOM2和DOM3"></a>3 DOM2和DOM3</h3><p>DOM1主要定义的是HTML和XML文档的底层结构</p>
+<h4 id="DOM2的模块"><a href="#DOM2的模块" class="headerlink" title="DOM2的模块"></a>DOM2的模块</h4><ul>
+<li>DOM2级核心(DOM Level 2 Core):在1级核心基础上构建，为节点添加了更多方法和属性。</li>
+<li>DOM2级视图(DOM Level 2 Views):为文档定义了基于样式信息的不同视图。</li>
+<li>DOM2级事件(DOM Level 2 Events):说明了如何使用事件与 DOM 文档交互。</li>
+<li>DOM2级样式(DOM Level 2 Style):定义了如何以编程方式来访问和改变 CSS 样式信息。</li>
+<li>DOM2级遍历和范围(DOM Level 2 Traversal and Range):引入了遍历 DOM 文档和选择其特定部分的新接口。</li>
+<li>DOM2级HTML(DOM Level 2 HTML):在1级HTML基础上构建，添加了更多属性、方法和新接口。</li>
+</ul>
+<p>…</p>
+<h2 id="Chapter-13-事件"><a href="#Chapter-13-事件" class="headerlink" title="Chapter 13 事件"></a>Chapter 13 事件</h2><p>JS和HTML之间的交互是通过事件实现的。</p>
+<h3 id="1-事件流"><a href="#1-事件流" class="headerlink" title="1.事件流"></a>1.事件流</h3><h4 id="1-1-事件冒泡和事件捕获"><a href="#1-1-事件冒泡和事件捕获" class="headerlink" title="1.1 事件冒泡和事件捕获"></a>1.1 事件冒泡和事件捕获</h4><ul>
+<li><strong>事件流</strong>描述的是从页面中接收事件的顺序。但有意思的是，IE和 Netscape开发团队居然提出了差不多是完全相反的事件流的概念。IE的事件流是事件冒泡流，而Netscape Communicator的事件流是事件捕获流。</li>
+<li><strong>事件冒泡</strong>从div到body到html到document，自下而上。</li>
+<li><strong>事件捕获</strong>从document到html到body到div，自上而下。</li>
+<li>由于老版本的浏览器不支持，因此很少有人使用事件捕获。我们也建议读者放心地使用事件冒泡，在有特殊需要时再使用事件捕获。</li>
+</ul>
+<h3 id="1-2-DOM事件流"><a href="#1-2-DOM事件流" class="headerlink" title="1.2 DOM事件流"></a>1.2 DOM事件流</h3><p>捕获和冒泡都有<br><img src="/blog/posts/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/DOM%E4%BA%8B%E4%BB%B6%E6%B5%81.png" alt="DOM事件流"><br>三个阶段：</p>
+<ul>
+<li>事件捕获阶段</li>
+<li>处于目标阶段</li>
+<li>事件冒泡阶段</li>
+</ul>
+<h3 id="2-事件处理程序"><a href="#2-事件处理程序" class="headerlink" title="2 事件处理程序"></a>2 事件处理程序</h3><h4 id="2-1-html事件处理程序"><a href="#2-1-html事件处理程序" class="headerlink" title="2.1 html事件处理程序"></a>2.1 html事件处理程序</h4><p>html的onXXX同名属性，传入一段JS代码，就能执行，而且能访问到其他地方的脚本中的变量，以及局部变量event，和this(该元素)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Click Me&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;alert(event.type);alert(this.value);&quot;</span> &gt;</span></span><br></pre></td></tr></table></figure>
+<p>事件处理程序中的代码在执行时，有权访问全局作用域中的任何代码。</p>
+<h4 id="2-2-DOM0级事件处理程序"><a href="#2-2-DOM0级事件处理程序" class="headerlink" title="2.2 DOM0级事件处理程序"></a>2.2 DOM0级事件处理程序</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;myBtn&quot;</span>);</span><br><span class="line">btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">id</span>); <span class="comment">// &quot;myBtn&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-DOM2级事件处理程序"><a href="#2-3-DOM2级事件处理程序" class="headerlink" title="2.3 DOM2级事件处理程序"></a>2.3 DOM2级事件处理程序</h4><p>“DOM2级事件”定义了两个方法，用于处理指定和删除事件处理程序的操作:<code>addEventListener()</code> 和 <code>removeEventListener()</code><br>接受三个参数：</p>
+<ul>
+<li>处理的事件名</li>
+<li>事件处理程序的函数</li>
+<li>布尔值：如果是true，表示在捕获阶段处理，反之则在冒泡阶段</li>
+</ul>
+<p>并且可添加多个事件处理程序</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;myBtn&quot;</span>);</span><br><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">id</span>); <span class="comment">// &quot;myBtn&quot;</span></span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;myBtn&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> handler = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">id</span>); <span class="comment">// &quot;myBtn&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line">btn.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, handler, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">btn.<span class="title function_">removeEventListener</span>(<span class="string">&quot;click&quot;</span>, handler, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-事件对象"><a href="#3-事件对象" class="headerlink" title="3 事件对象"></a>3 事件对象</h3><p>TODO 有哪些属性</p>
+<h3 id="4-事件类型"><a href="#4-事件类型" class="headerlink" title="4 事件类型"></a>4 事件类型</h3><p>非常多类型，很详细，有需要可以去查询</p>
+<h3 id="5-内存和性能"><a href="#5-内存和性能" class="headerlink" title="5 内存和性能"></a>5 内存和性能</h3><ul>
+<li>对“事件处理程序过多”问题的解决方案就是<strong>事件委托</strong><br>添加一个事件处理程序，根据target的属性去做不同的事情。这样只会添加一次。</li>
+<li>移除事件处理程序</li>
+</ul>
+<h3 id="6-模拟事件"><a href="#6-模拟事件" class="headerlink" title="6 模拟事件"></a>6 模拟事件</h3><p>利用JS 在任意时刻触发事件，<br>DOM中：document对象上使用createEvent()方法创建event对象</p>
+
+      </div>
+    </article>
+  </div>
+
+  <aside class="toc-sidebar" id="tocSidebar">
+    <div class="toc-label" id="tocLabel">目录</div>
+    <nav id="tocNav"></nav>
+  </aside>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Ian Gao&#39;s Blog</p>
+  </footer>
+
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  
+<script src="/blog/js/main.js"></script>
+
+  
+    <div class="busuanzi-hidden" aria-hidden="true">
+      <span id="busuanzi_container_site_pv">访问量 <span id="busuanzi_value_site_pv">-</span></span>
+      <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv">-</span></span>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</body>
+</html>

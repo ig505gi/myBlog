@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>深入React技术栈-Chapter3-React源码 — Ian Gao&#39;s Blog</title>
+  <meta name="description" content="《深入 React 技术栈》React 源码分析，探索 React 框架内部的组织结构和实现原理。">
+  
+  <link rel="canonical" href="https://ig505gi.github.io/blog/posts/深入React技术栈-Chapter3-React源码/">
+  <meta property="og:title" content="深入React技术栈-Chapter3-React源码">
+  <meta property="og:description" content="《深入 React 技术栈》React 源码分析，探索 React 框架内部的组织结构和实现原理。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ig505gi.github.io/blog/posts/深入React技术栈-Chapter3-React源码/">
+  <meta property="og:site_name" content="Ian Gao&#39;s Blog">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="深入React技术栈-Chapter3-React源码">
+  <meta name="twitter:description" content="《深入 React 技术栈》React 源码分析，探索 React 框架内部的组织结构和实现原理。">
+  <link rel="preload" href="/blog/fonts/TsangerJinKai02.woff2" as="font" type="font/woff2" crossorigin>
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "深入React技术栈-Chapter3-React源码",
+    "description": "《深入 React 技术栈》React 源码分析，探索 React 框架内部的组织结构和实现原理。",
+    "url": "https://ig505gi.github.io/blog/posts/深入React技术栈-Chapter3-React源码/",
+    "datePublished": "2022-02-21",
+    "dateModified": "2026-05-29",
+    "author": {
+      "@type": "Person",
+      "name": "Ian Gao"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ig505gi.github.io/blog/posts/深入React技术栈-Chapter3-React源码/"
+    }
+  }
+  </script>
+  
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/blog/atom.xml" title="Ian Gao's Blog" type="application/atom+xml">
+</head>
+<body class="page-post">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/blog/" class="site-logo">Ian Gao&#39;s Blog</a>
+      <nav class="header-nav" id="headerNav">
+        <div class="header-menu" id="headerMenu">
+          <div class="cat-dropdown" id="catDropdown">
+            <button class="cat-btn" id="catBtn">
+              全部文章
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="cat-menu" id="catMenu">
+              <a href="/blog/">全部文章</a>
+              
+                <a href="/blog/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+              
+            </div>
+          </div>
+          <hr class="mobile-divider">
+          
+            <a href="https://github.com/ig505gi" class="header-link" target="_blank" rel="noopener">GitHub</a>
+          
+          
+          
+            <a href="https://x.com/ig505gi" class="header-link" target="_blank" rel="noopener">X</a>
+          
+          <a href="https://ig505gi.github.io/" class="header-link">About Me</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单" aria-expanded="false" aria-controls="headerMenu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    
+<div class="article-wrap">
+  <div class="article-main">
+    <article>
+      <header class="article-header">
+        
+        
+        <h1>深入React技术栈-Chapter3-React源码</h1>
+        <div class="article-tags">
+          <span class="tag">2022-02-21</span>
+          <span class="tag">204 字</span>
+          
+            <span class="tag cat">学习笔记</span>
+          
+        </div>
+      </header>
+
+      <div class="article-body">
+        <h2 id="1-初探React源码"><a href="#1-初探React源码" class="headerlink" title="1. 初探React源码"></a>1. 初探React源码</h2><p>React源码的组织结构<br><img src="/blog/posts/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter3-React%E6%BA%90%E7%A0%81/react%E7%9B%AE%E5%BD%95.jpg" alt="react目录"></p>
+<span id="more"></span>
+<p>而renderers目录结构是这样的<br><img src="/blog/posts/%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88-Chapter3-React%E6%BA%90%E7%A0%81/react-renderers%E7%9B%AE%E5%BD%95.jpg" alt="react-renderers目录"></p>
+<p>client是客户端操作dom的一些方法；server是服务端渲染的实现和方法；event包含有一套自定义的事件插件系统；作为React核心的reconciler，称为协调器，管理组件的实现、生命周期、setState、DOM diff算法;管理Virtual DOM</p>
+<h2 id="2-Virtual-DOM-模型"><a href="#2-Virtual-DOM-模型" class="headerlink" title="2. Virtual DOM 模型"></a>2. Virtual DOM 模型</h2><h3 id="ReactNode"><a href="#ReactNode" class="headerlink" title="ReactNode"></a>ReactNode</h3><p>Virtual DOM的节点叫作ReactNode</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type <span class="title class_">ReactNode</span> = <span class="title class_">ReactElement</span> | <span class="title class_">ReactFragment</span> | <span class="title class_">ReactText</span>;</span><br><span class="line">type <span class="title class_">ReactElement</span> = <span class="title class_">ReactComponentElement</span> | <span class="title class_">ReactDOMElement</span>;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F; 差一些</p>
+<h3 id="ReactDOMComponent"><a href="#ReactDOMComponent" class="headerlink" title="ReactDOMComponent"></a>ReactDOMComponent</h3><ol>
+<li>属性的更新，包括更新样式、更新属性、处理事件等;</li>
+<li>子节点的更新，包括更新内容、更新子节点，此部分涉及diff算法。</li>
+</ol>
+<p>&#x2F;&#x2F; 差很多</p>
+
+      </div>
+    </article>
+  </div>
+
+  <aside class="toc-sidebar" id="tocSidebar">
+    <div class="toc-label" id="tocLabel">目录</div>
+    <nav id="tocNav"></nav>
+  </aside>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Ian Gao&#39;s Blog</p>
+  </footer>
+
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  
+<script src="/blog/js/main.js"></script>
+
+  
+    <div class="busuanzi-hidden" aria-hidden="true">
+      <span id="busuanzi_container_site_pv">访问量 <span id="busuanzi_value_site_pv">-</span></span>
+      <span id="busuanzi_container_site_uv">访客数 <span id="busuanzi_value_site_uv">-</span></span>
+    </div>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+</body>
+</html>
